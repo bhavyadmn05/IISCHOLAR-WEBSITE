@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services & Programs – Study Abroad IISPPR</title>
+    <style>
+      :root {
+        --color-primary: #0d2b4d;
+        --color-gold: #c89b3c;
+        --color-gold-dark: #a67c2f;
+        --color-white: #ffffff;
+        --transition-base: 0.3s ease;
+      }
+
+      /* =============================================================================
+   NAVBAR
+============================================================================= */
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 50px;
+        background: var(--color-white);
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-logo {
+        height: 55px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .brand {
+        color: var(--color-primary);
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      /* -----------------------------------------------------------------------------
+   Nav Links
+----------------------------------------------------------------------------- */
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 35px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15.5px;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding: 5px 0;
+        transition: all var(--transition-base);
+      }
+
+      /* Underline animation */
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--color-gold),
+          var(--color-gold-dark)
+        );
+        transition: all var(--transition-base);
+        transform: translateX(-50%);
+      }
+
+      .nav-links a:hover {
+        color: var(--color-gold);
+        transform: translateY(-2px);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* -----------------------------------------------------------------------------
+   CTA Button
+----------------------------------------------------------------------------- */
+
+      .cta-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .pointer {
+        font-size: 20px;
+        animation: pointAnim 1.5s infinite;
+      }
+
+      @keyframes pointAnim {
+        0%,
+        100% {
+          transform: translateX(0);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateX(8px);
+          opacity: 1;
+        }
+      }
+
+      .nav-btn {
+        background: linear-gradient(
+          135deg,
+          var(--color-gold),
+          var(--color-gold-dark)
+        );
+        color: var(--color-white);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        transition: all var(--transition-base);
+      }
+
+      .nav-btn::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 25px;
+        animation: pulseGlow 2s infinite;
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(200, 155, 60, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(200, 155, 60, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(200, 155, 60, 0);
+        }
+      }
+
+      .nav-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(200, 155, 60, 0.4);
+      }
+
+      .nav-btn:active {
+        transform: scale(0.95);
+      }
+
+      /* -----------------------------------------------------------------------------
+   Dropdown
+----------------------------------------------------------------------------- */
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--color-white);
+        border-radius: 10px;
+        padding: 10px 0;
+        list-style: none;
+        min-width: 180px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        top: 140%;
+      }
+
+      .dropdown-menu li {
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        color: var(--color-primary);
+        font-size: 14px;
+        text-decoration: none;
+        transition: var(--transition-base);
+      }
+
+      .dropdown-menu a:hover {
+        background: rgba(200, 155, 60, 0.1);
+        color: var(--color-gold);
+        padding-left: 25px;
+      }
+
+      /* -----------------------------------------------------------------------------
+   Hamburger
+----------------------------------------------------------------------------- */
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+        z-index: 1100;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--color-primary);
+        border-radius: 3px;
+        transition: all var(--transition-base);
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* Mobile CTA — hidden by default, shown inside menu on mobile */
+      .nav-links .mobile-cta {
+        display: none;
+      }
+
+      /* =============================================================================
+   RESPONSIVE — TABLET  (max-width: 1024px)
+============================================================================= */
+
+      @media (max-width: 1024px) {
+        .navbar {
+          padding: 10px 25px;
+        }
+      }
+
+      /* =============================================================================
+   RESPONSIVE — SMALL TABLET / LARGE MOBILE  (max-width: 900px)
+============================================================================= */
+
+      @media (max-width: 900px) {
+        .navbar {
+          padding: 10px 24px;
+          flex-wrap: wrap;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          gap: 0;
+          width: 100%;
+          background: var(--color-white);
+          border-top: 1px solid #eee;
+          padding: 12px 0;
+          margin-top: 10px;
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links a {
+          display: block;
+          padding: 12px 24px;
+          font-size: 15px;
+        }
+
+        .nav-links a::after {
+          display: none;
+        }
+
+        .nav-links a:hover {
+          transform: none;
+          padding-left: 32px;
+          background: rgba(200, 155, 60, 0.06);
+        }
+
+        /* Dropdown becomes accordion on mobile */
+        .dropdown-menu {
+          position: static;
+          transform: none;
+          box-shadow: none;
+          border-radius: 0;
+          padding: 0 0 0 16px;
+          opacity: 1;
+          visibility: visible;
+          display: none;
+          min-width: unset;
+        }
+
+        .dropdown.open .dropdown-menu {
+          display: block;
+        }
+
+        .dropdown > a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        /* Hide desktop CTA; show mobile CTA inside menu */
+        .nav-right {
+          display: none;
+        }
+
+        .nav-links .mobile-cta {
+          display: block;
+          padding: 16px 24px 8px;
+        }
+
+        .nav-links .mobile-cta .nav-btn {
+          width: 100%;
+          padding: 12px 20px;
+          font-size: 15px;
+        }
+
+        .nav-links .mobile-cta .pointer {
+          display: none;
+        }
+      }
+
+      /* =============================================================================
+   RESPONSIVE — MOBILE  (max-width: 768px)
+============================================================================= */
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+          font-size: 22px;
+          cursor: pointer;
+          color: var(--color-primary);
+        }
+
+        .nav-right {
+          display: none;
+        }
+      }
+
+      /* =============================================================================
+   RESPONSIVE — SMALL MOBILE  (max-width: 480px)
+============================================================================= */
+
+      @media (max-width: 480px) {
+        .brand {
+          font-size: 16px;
+        }
+        .nav-logo {
+          height: 40px;
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --gold: #c89b3c;
+        --gold-light: #e0b84e;
+        --gold-dark: #a67c2f;
+        --gold-pale: #fdf3dc;
+        --gold-glow: rgba(200, 155, 60, 0.25);
+        --navy: #0d2b4d;
+        --navy-mid: #112d52;
+        --navy-deep: #071a2e;
+        --off-white: #fdf8ef;
+        --text-body: #4a5568;
+        --text-muted: #8a9bb5;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: #1a202c;
+        background: #fff;
+      }
+
+      /* ─── HERO ─────────────────────────────────────────── */
+      .hero {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          140deg,
+          var(--navy-deep) 0%,
+          var(--navy) 50%,
+          #163d6b 100%
+        );
+        position: relative;
+        overflow: hidden;
+        padding: 80px 24px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 80% 20%,
+            rgba(200, 155, 60, 0.12) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 40% 40% at 20% 80%,
+            rgba(200, 155, 60, 0.08) 0%,
+            transparent 60%
+          );
+      }
+
+      /* Gold shimmer line across hero top */
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          var(--gold-light),
+          var(--gold),
+          transparent
+        );
+      }
+
+      .hero-lines {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        opacity: 0.06;
+        pointer-events: none;
+      }
+
+      .hero-lines svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+        text-align: center;
+      }
+
+      .hero-eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold-light);
+        border: 1px solid rgba(200, 155, 60, 0.4);
+        border-radius: 20px;
+        padding: 5px 16px;
+        margin-bottom: 28px;
+        background: rgba(200, 155, 60, 0.07);
+      }
+
+      .hero-content h1 {
+        font-family: Arial, sans-serif;
+        font-size: clamp(36px, 5vw, 58px);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.15;
+        margin-bottom: 24px;
+        letter-spacing: -0.5px;
+      }
+
+      .hero-content h1 em {
+        font-style: italic;
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+        line-height: 1.75;
+        color: rgba(220, 235, 255, 0.8);
+        max-width: 580px;
+        margin: 0 auto 14px;
+      }
+
+      .hero-content p.sub {
+        font-size: 14px;
+        color: rgba(200, 155, 60, 0.7);
+      }
+
+      .hero-divider {
+        width: 48px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--gold),
+          rgba(200, 155, 60, 0.1)
+        );
+        margin: 28px auto;
+      }
+
+      /* ─── SHARED SECTION LABELS ────────────────────────── */
+      .section-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold-dark);
+        margin-bottom: 8px;
+      }
+
+      .section-title {
+        font-family: Arial, sans-serif;
+        font-size: 32px;
+        color: var(--navy);
+        margin-bottom: 48px;
+        font-weight: 600;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 55px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        margin-top: 14px;
+        border-radius: 2px;
+      }
+
+      /* center the underline when section-title is inside a centered header */
+      .phil-header .section-title::after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ─── PROGRAMS GRID ────────────────────────────────── */
+      .section-grid {
+        padding: 80px 5%;
+        background: var(--off-white);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 32px 28px;
+        border: 1px solid rgba(200, 155, 60, 0.15);
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 45px rgba(200, 155, 60, 0.15);
+        border-color: rgba(200, 155, 60, 0.35);
+      }
+
+      .card-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      }
+
+      .card-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: rgba(200, 155, 60, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        border: 1px solid rgba(200, 155, 60, 0.2);
+        transition: background 0.25s ease;
+      }
+
+      .card:hover .card-icon {
+        background: rgba(200, 155, 60, 0.18);
+      }
+
+      .card-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--gold-dark);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .card h2 {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        color: var(--navy);
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+
+      .card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .card ul li {
+        padding: 7px 0 7px 22px;
+        position: relative;
+        font-size: 14px;
+        color: var(--text-body);
+        line-height: 1.5;
+        border-bottom: 1px solid rgba(200, 155, 60, 0.08);
+      }
+
+      .card ul li:last-child {
+        border-bottom: none;
+      }
+
+      .card ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--gold);
+        opacity: 0.7;
+      }
+
+      .card.wide {
+        grid-column: span 2;
+      }
+
+      .card.wide ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 24px;
+      }
+
+      /* ─── PHILOSOPHY ───────────────────────────────────── */
+      .section-philosophy {
+        padding: 90px 5%;
+        background: #fff;
+      }
+
+      .phil-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .phil-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 820px;
+        margin: 0 auto 20px;
+      }
+
+      .phil-item {
+        background: var(--off-white);
+        border: 1px solid rgba(200, 155, 60, 0.2);
+        border-radius: 14px;
+        padding: 26px 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        transition: all 0.25s ease;
+        cursor: default;
+      }
+
+      .phil-item:hover {
+        background: var(--navy);
+        border-color: var(--navy);
+        box-shadow: 0 12px 35px rgba(13, 43, 77, 0.2);
+        transform: translateY(-3px);
+      }
+
+      .phil-item:hover .phil-num {
+        color: var(--gold-light);
+      }
+
+      .phil-item:hover .phil-text {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .phil-num {
+        font-family: Arial, sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--gold);
+        opacity: 0.5;
+        line-height: 1;
+        min-width: 32px;
+        transition:
+          color 0.25s,
+          opacity 0.25s;
+      }
+
+      .phil-item:hover .phil-num {
+        opacity: 1;
+      }
+
+      .phil-text {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 1.4;
+        padding-top: 4px;
+        transition: color 0.25s;
+      }
+
+      .phil-highlight {
+        max-width: 820px;
+        margin: 0 auto;
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-mid) 60%,
+          #163d6b 100%
+        );
+        border-radius: 16px;
+        padding: 32px 40px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        border: 1px solid rgba(200, 155, 60, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* gold shimmer top border on highlight block */
+      .phil-highlight::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          var(--gold-light),
+          var(--gold),
+          transparent
+        );
+      }
+
+      .phil-highlight-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: rgba(200, 155, 60, 0.15);
+        border: 1px solid rgba(200, 155, 60, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .phil-highlight-icon svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--gold-light);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .phil-highlight p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.55;
+        font-weight: 500;
+      }
+
+      .phil-quote {
+        max-width: 680px;
+        margin: 56px auto 0;
+        padding: 36px 40px;
+        border-left: 3px solid var(--gold);
+        background: var(--gold-pale);
+        border-radius: 0 14px 14px 0;
+        box-shadow: 0 4px 20px rgba(200, 155, 60, 0.1);
+      }
+
+      .phil-quote p {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-style: italic;
+        color: var(--navy);
+        line-height: 1.7;
+      }
+
+      /* ─── RESPONSIVE ───────────────────────────────────── */
+      @media (max-width: 768px) {
+        .card.wide {
+          grid-column: span 1;
+        }
+
+        .card.wide ul {
+          grid-template-columns: 1fr;
+        }
+
+        .phil-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .phil-highlight {
+          flex-direction: column;
+          padding: 28px 24px;
+        }
+
+        .phil-quote {
+          margin: 40px 0 0;
+          padding: 24px 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-grid,
+        .section-philosophy {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      
+.footer {
+  position: relative;
+  background: linear-gradient(135deg, #071a2e, #0D2B4D);
+  color: white;
+  padding: 80px 40px 20px;
+  overflow: hidden;
+}
+
+/* subtle world map background */
+.footer-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg");
+  background-size: cover;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* layout */
+.footer-container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+/* headings */
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.footer-col h4 {
+  color: #C89B3C;
+  margin-bottom: 15px;
+}
+
+/* text */
+.footer-col p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #C89B3C;
+  padding-left: 4px;
+}
+
+/* social icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background: #C89B3C;
+  color: #0D2B4D;
+  transform: translateY(-3px);
+}
+
+/* bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+  padding-top: 15px;
+  text-align: center;
+  color: #888;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <!-- Logo + Brand -->
+        <div class="nav-left">
+          <img src="logo.png" alt="logo" class="nav-logo" />
+          <span class="brand">IISCHOLAR</span>
+        </div>
+
+        <!-- Hamburger (outside nav-left) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+
+          <!-- DROPDOWN -->
+          <li class="dropdown">
+            <a href="#">Destinations ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="europe.html" target="_blank">Europe</a></li>
+              <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+              <li><a href="canada.html" target="_blank">Canada</a></li>
+              <li><a href="australia.html" target="_blank">Australia</a></li>
+              <li><a href="japan.html" target="_blank">Japan</a></li>
+              <li><a href="india.html" target="_blank">India</a></li>
+            </ul>
+          </li>
+
+          <li><a href="services.html" target="_blank">Services</a></li>
+          <li>
+            <a href="collaborations.html" target="_blank">Collaborations</a>
+          </li>
+          <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+          <li><a href="events.html" target="_blank">Events</a></li>
+
+          <!-- Mobile-only Book Session (last item) -->
+          <li class="mobile-cta">
+            <div class="cta-wrapper">
+              <button
+                class="nav-btn"
+                onclick="
+                  window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+                "
+              >
+                Book Session
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="nav-right">
+          <div class="cta-wrapper">
+            <span class="pointer">👉</span>
+            <button
+              class="nav-btn"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Session
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-lines">
+        <svg
+          viewBox="0 0 800 500"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0"
+            y1="100"
+            x2="800"
+            y2="400"
+            stroke="white"
+            stroke-width="0.5"
+          />
+          <line
+            x1="0"
+            y1="300"
+            x2="800"
+            y2="100"
+            stroke="white"
+            stroke-width="0.5"
+          />
+          <line
+            x1="200"
+            y1="0"
+            x2="200"
+            y2="500"
+            stroke="white"
+            stroke-width="0.5"
+          />
+          <line
+            x1="600"
+            y1="0"
+            x2="600"
+            y2="500"
+            stroke="white"
+            stroke-width="0.5"
+          />
+          <circle
+            cx="200"
+            cy="180"
+            r="60"
+            stroke="white"
+            stroke-width="0.5"
+            fill="none"
+          />
+          <circle
+            cx="600"
+            cy="320"
+            r="100"
+            stroke="white"
+            stroke-width="0.5"
+            fill="none"
+          />
+        </svg>
+      </div>
+      <div class="hero-content">
+        <span class="hero-eyebrow">Study Abroad IISPPR</span>
+        <h1>Our Services &amp; <em>Programs</em></h1>
+        <div class="hero-divider"></div>
+        <p>
+          Ethical, transparent, and mentorship-driven guidance for students
+          across diverse academic pathways.
+        </p>
+        <p class="sub">
+          We help students identify opportunities aligned with their academic
+          background, aspirations, and long-term goals.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROGRAMS GRID -->
+    <section class="section-grid">
+      <div class="section-label">What we offer</div>
+      <div class="section-title">Academic Programs</div>
+
+      <div class="grid">
+        <!-- Undergraduate -->
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+          </div>
+          <h2>Undergraduate</h2>
+          <ul>
+            <li>Understanding global undergraduate systems</li>
+            <li>Program &amp; university shortlisting</li>
+            <li>Academic planning &amp; transition readiness</li>
+            <li>Parent-inclusive guidance</li>
+          </ul>
+        </div>
+
+        <!-- Postgraduate -->
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+          </div>
+          <h2>Postgraduate &amp; Masters</h2>
+          <ul>
+            <li>Discipline-specific program evaluation</li>
+            <li>Academic &amp; career alignment</li>
+            <li>Application strategy guidance</li>
+            <li>Scholarship strategies</li>
+          </ul>
+        </div>
+
+        <!-- Research -->
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"
+              />
+            </svg>
+          </div>
+          <h2>Research &amp; Doctoral</h2>
+          <ul>
+            <li>Identifying research-focused institutions</li>
+            <li>Application process &amp; expectations</li>
+            <li>Preparation for rigorous academics</li>
+            <li>Long-term research planning</li>
+          </ul>
+        </div>
+
+        <!-- Career Counselling -->
+        <div class="card">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h2>Career Counselling</h2>
+          <ul>
+            <li>Individual counselling sessions</li>
+            <li>Psychometric assessment</li>
+            <li>Higher education roadmap</li>
+            <li>Subject &amp; board selection (UG)</li>
+            <li>Stream &amp; program guidance (graduates)</li>
+          </ul>
+        </div>
+
+        <!-- Profile Building (wide) -->
+        <div class="card wide">
+          <div class="card-accent"></div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+          </div>
+          <h2>Profile Building</h2>
+          <ul>
+            <li>Research &amp; publications</li>
+            <li>Internships</li>
+            <li>Sustainable development projects</li>
+            <li>Policy think tanks</li>
+            <li>Debates &amp; quizzes</li>
+            <li>Volunteering &amp; community impact</li>
+            <li>Capstone project</li>
+            <li>Passion project with thesis &amp; publication</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="section-philosophy">
+      <div class="phil-header">
+        <div class="section-label">How we work</div>
+        <div class="section-title">Our Guidance Philosophy</div>
+      </div>
+
+      <div class="phil-grid">
+        <div class="phil-item">
+          <span class="phil-num">01</span>
+          <span class="phil-text">Ethical &amp; Transparent Counselling</span>
+        </div>
+        <div class="phil-item">
+          <span class="phil-num">02</span>
+          <span class="phil-text">Student-Centred Mentorship</span>
+        </div>
+        <div class="phil-item">
+          <span class="phil-num">03</span>
+          <span class="phil-text"
+            >Academic &amp; Institutional Credibility</span
+          >
+        </div>
+        <div class="phil-item">
+          <span class="phil-num">04</span>
+          <span class="phil-text">Long-Term Educational Impact</span>
+        </div>
+      </div>
+
+      <div class="phil-highlight">
+        <div class="phil-highlight-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <p>
+          Every student benefits from guidance that is honest, informed, and
+          built around their unique aspirations — not institutional convenience.
+        </p>
+      </div>
+    </section>
+    <footer class="footer" id="footer">
+
+  <div class="footer-bg"></div>
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>IISCHOLAR</h3>
+      <p>
+        Global Education Guided by Research & Ethics. </br> 
+        Supporting students with responsible and transparent international education pathways.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        
+        <li><a href="#about">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collaborations.html">Collaborations</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="contact.html" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Social</h4>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1EWXGP1pPR/" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg==" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-linkedin-in"></i>
+</a>
+      </div>
+
+      <p class="social-text">
+        Stay connected for updates, admissions & scholarships.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026  IISCHOLAR All rights reserved.</p>
+  </div>
+
+</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const destDropdown = document.querySelector(".dropdown");
+        const destToggle = document.querySelector(".dropdown > a");
+
+        if (!hamburger || !navLinks) return;
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          navLinks.classList.toggle("open");
+        });
+
+        destToggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            destDropdown.classList.toggle("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

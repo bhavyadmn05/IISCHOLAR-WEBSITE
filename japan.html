@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IISCHOLAR</title>
+
+    <link rel="stylesheet" href="europe.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-left">
+          <img src="logo.png" alt="logo" class="nav-logo" />
+          <span class="brand">IISCHOLAR</span>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li class="dropdown">
+            <a href="#">Destinations ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="europe.html" target="_blank">Europe</a></li>
+              <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+              <li><a href="canada.html" target="_blank">Canada</a></li>
+              <li><a href="australia.html" target="_blank">Australia</a></li>
+              <li><a href="japan.html" target="_blank">Japan</a></li>
+              <li><a href="india.html" target="_blank">India</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html" target="_blank">Services</a></li>
+          <li>
+            <a href="collaborations.html" target="_blank">Collaborations</a>
+          </li>
+          <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+          <li><a href="events.html" target="_blank">Events</a></li>
+          <li class="mobile-cta">
+            <div class="cta-wrapper">
+              <button
+                class="nav-btn"
+                onclick="
+                  window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+                "
+              >
+                Book Session
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="nav-right">
+          <div class="cta-wrapper">
+            <span class="pointer">👉</span>
+            <button
+              class="nav-btn"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Session
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="europe-hero"
+      style="
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(&quot;https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80&quot;)
+            center/cover no-repeat;
+      "
+    >
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Study in Japan</h1>
+          <p class="subheading">
+            Big Opportunity Through MEXT — Innovation Meets Timeless Culture
+          </p>
+          <p class="tagline">
+            Tokyo • Kyoto • Osaka • MEXT Scholarship • Fully Funded Education
+          </p>
+          <div class="hero-buttons">
+            <button
+              class="btn primary"
+              onclick="window.open('services.html', '_blank')"
+            >
+              Explore Programs
+            </button>
+            <button
+              class="btn secondary"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Counselling
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down">↓</div>
+    </section>
+
+    <section class="country-section">
+      <div class="container">
+        <h2>Why Study in Japan</h2>
+
+        <p class="section-desc">
+          Japan offers an incredible opportunity through the MEXT (Japanese
+          Government) Scholarship — one of the world's most generous scholarship
+          programs, providing full tuition, a monthly stipend, airfare, and no
+          Japanese language requirement for many programs. Japan blends
+          cutting-edge technology with rich cultural heritage, home to
+          innovative companies like Sony, Toyota, and Nintendo. Universities
+          like Tokyo, Kyoto, and Osaka rank highly in Asia — particularly for
+          engineering, robotics, and sciences. English-taught programs are
+          expanding rapidly, making Japan increasingly accessible, while the
+          country's focus on innovation, safety, and quality of life creates a
+          truly enriching study experience.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 0">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/globe.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Top Asian Universities</h3>
+              <p>
+                Tokyo, Kyoto & Osaka ranked among Asia's best — especially for
+                engineering & sciences
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 1">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Academic Background.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>MEXT Scholarship</h3>
+              <p>
+                Full tuition + stipend + airfare — no Japanese language
+                requirement for many programs
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 2">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Training.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Innovation & Technology</h3>
+              <p>
+                Home to Sony, Toyota, and Nintendo — access to world-leading
+                robotics & AI research
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 3">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Learn More.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>English-Taught Programs</h3>
+              <p>
+                Rapidly expanding English-medium courses making Japan more
+                accessible than ever
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 4">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/history.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Rich Culture & Safety</h3>
+              <p>
+                Unique cultural immersion in one of the world's safest and most
+                organised societies
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 5">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Research.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Research Excellence</h3>
+              <p>
+                Leading research in robotics, automotive, electronics &
+                artificial intelligence
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="country-section light">
+      <h2>Popular Courses</h2>
+
+      <div class="cards">
+        <!-- 1 Engineering & Robotics -->
+        <input type="radio" id="radio-1" name="radio-card" checked />
+        <article class="card" style="--angle: 4deg">
+          <img
+            class="card-img"
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
+          />
+          <div class="card-data">
+            <h2>Engineering & Robotics</h2>
+            <p>
+              Japan leads the world in automation and robotics, making it the
+              premier destination for engineering students. Universities like
+              Tokyo Institute of Technology and Osaka University offer
+              unparalleled research access, with direct industry partnerships
+              with companies driving the global robotics revolution.
+            </p>
+            <footer>
+              <label for="radio-5">&#10094;</label>
+              <label for="radio-2">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 2 Manga, Animation & Game Design -->
+        <input type="radio" id="radio-2" name="radio-card" />
+        <article class="card" style="--angle: -8deg">
+          <img
+            src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Manga, Animation & Game Design</h2>
+            <p>
+              Learn from the birthplace of anime and gaming. Japan's creative
+              industry institutions offer world-class programmes in manga,
+              animation, and game design, with graduates contributing to
+              globally recognised studios and publishers. Tokyo and Kyoto host
+              some of the finest art and design schools in Asia.
+            </p>
+            <footer>
+              <label for="radio-1">&#10094;</label>
+              <label for="radio-3">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 3 Business & Economics -->
+        <input type="radio" id="radio-3" name="radio-card" />
+        <article class="card" style="--angle: -6deg">
+          <img
+            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Business & Economics</h2>
+            <p>
+              Studying business in Japan means understanding Asia's
+              second-largest economy from the inside. Top institutions like
+              Hitotsubashi University and Keio Business School provide rigorous
+              programmes focused on international commerce, management, and the
+              unique dynamics of Japanese corporate culture and global trade.
+            </p>
+            <footer>
+              <label for="radio-2">&#10094;</label>
+              <label for="radio-4">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 4 Technology & AI -->
+        <input type="radio" id="radio-4" name="radio-card" />
+        <article class="card" style="--angle: 10deg">
+          <img
+            src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Technology & AI</h2>
+            <p>
+              Japan's commitment to becoming a global AI leader makes it an
+              exceptional environment for tech students. Access to cutting-edge
+              research labs, collaboration opportunities with leading tech
+              corporations, and a government actively investing in AI and
+              digital transformation provide unmatched career prospects.
+            </p>
+            <footer>
+              <label for="radio-3">&#10094;</label>
+              <label for="radio-5">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 5 Japanese Language & Culture -->
+        <input type="radio" id="radio-5" name="radio-card" />
+        <article class="card" style="--angle: 15deg">
+          <img
+            src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Japanese Language & Culture</h2>
+            <p>
+              An immersive language-learning environment like no other —
+              studying Japanese in Japan accelerates fluency dramatically.
+              Cultural studies programmes at Waseda, Kyoto, and other leading
+              universities combine language acquisition with deep dives into
+              history, arts, and contemporary Japanese society.
+            </p>
+            <footer>
+              <label for="radio-4">&#10094;</label>
+              <label for="radio-1">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cost-section">
+      <h2 class="section-title">Cost & Scholarships</h2>
+
+      <div class="cost-highlight">
+        <div class="cost-box">
+          <h3>Tuition Fees</h3>
+          <p>¥535,800 – ¥900,000 / year</p>
+        </div>
+        <div class="cost-box">
+          <h3>Living Costs</h3>
+          <p>¥900,000 – ¥1,500,000 / year</p>
+        </div>
+      </div>
+
+      <div class="country-cost-grid">
+        <div class="country-cost-card">
+          <h4>MEXT Scholarship 🇯🇵</h4>
+          <p>
+            Full tuition + monthly stipend + airfare — one of the world's most
+            generous funded programs
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>JASSO Scholarship 🎓</h4>
+          <p>
+            Japan Student Services Organization — monthly support grants for
+            eligible international students
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>University-Specific Awards 🏛</h4>
+          <p>
+            Merit-based scholarships and tuition waivers offered directly by
+            individual Japanese universities
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>Private Foundation Awards 🌏</h4>
+          <p>
+            Numerous private foundations in Japan offer additional support to
+            outstanding international students
+          </p>
+        </div>
+      </div>
+
+      <div class="scholarships">
+        <h3>Scholarships Available</h3>
+        <div class="scholarship-list">
+          <span>MEXT Scholarship</span>
+          <span>JASSO Grant</span>
+          <span>University Awards</span>
+          <span>Private Foundation Grants</span>
+          <span>Prefectural Scholarships</span>
+          <span>Industry-Sponsored Awards</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="visa-section-alt">
+      <h2 class="section-title">Visa Overview</h2>
+
+      <p class="visa-intro">
+        The Japanese Student Visa (College Student Visa) allows full-time study
+        at accredited Japanese institutions. Known for its efficiency and clear
+        documentation requirements, the process is managed through your
+        university's international office and the nearest Japanese embassy or
+        consulate.
+      </p>
+
+      <div class="visa-timeline">
+        <div class="step">
+          <span>01</span>
+          <h4>Receive Admission</h4>
+          <p>
+            Get your Certificate of Eligibility (CoE) prepared by your Japanese
+            institution
+          </p>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <h4>Prepare Documents</h4>
+          <p>
+            Financial proof, academic transcripts, health certificate & passport
+            photos
+          </p>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <h4>Apply at Embassy</h4>
+          <p>
+            Submit your visa application at the Japanese Embassy or Consulate in
+            your country
+          </p>
+        </div>
+
+        <div class="step">
+          <span>04</span>
+          <h4>Fly to Japan</h4>
+          <p>
+            Begin your academic and cultural journey in the Land of the Rising
+            Sun
+          </p>
+        </div>
+      </div>
+
+      <div class="visa-info-strip">
+        <div>
+          💰 <strong>Funds:</strong> Proof of sufficient financial support
+          required
+        </div>
+        <div>
+          🗣 <strong>English:</strong> IELTS / TOEFL for English-taught programs
+        </div>
+        <div>
+          🏥 <strong>Insurance:</strong> National Health Insurance enrollment
+          mandatory on arrival
+        </div>
+      </div>
+
+      <div class="post-study">
+        <h3>After Graduation</h3>
+
+        <div class="post-bar">
+          <div class="post-pill">
+            <span class="country">Designated Activities</span>
+            <span class="info"
+              >Job-hunting visa extension up to 1 year after graduation</span
+            >
+          </div>
+
+          <div class="post-pill">
+            <span class="country">Engineer / Specialist</span>
+            <span class="info"
+              >Work visa for tech, engineering & business professionals</span
+            >
+          </div>
+
+          <div class="post-pill">
+            <span class="country">Highly Skilled Professional</span>
+            <span class="info"
+              >Points-based fast-track to long-term residency</span
+            >
+          </div>
+
+          <div class="post-pill highlight">
+            <span class="country">Japanese PR</span>
+            <span class="info"
+              >Permanent residency pathway after 5–10 years of residence</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="who-section">
+      <h2>Who Should Choose Japan</h2>
+
+      <p class="who-intro">
+        Discover if Japan aligns with your goals, ambitions, and lifestyle.
+      </p>
+
+      <div class="who-tags">
+        <div class="tag">Technology & Engineering Enthusiasts</div>
+        <div class="tag">Anime, Manga & Game Design Students</div>
+        <div class="tag">MEXT Scholarship Seekers</div>
+        <div class="tag">Robotics & Automation Professionals</div>
+        <div class="tag">Japanese Language Learners</div>
+        <div class="tag">Asia-Pacific Business Aspirants</div>
+        <div class="tag">Cultural Immersion Seekers</div>
+        <div class="tag">Automotive & Electronics Industry Aspirants</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <h2>Begin Your Japanese Education Journey</h2>
+        <p>
+          Whether you are a student, parent, or institutional partner, we invite
+          you to connect with us and explore pathways aligned with your
+          aspirations.
+        </p>
+        <div class="cta-buttons">
+          <button
+            class="cta-btn primary"
+            onclick="window.open('contact.html', '_blank')"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="footer-bg"></div>
+
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>IISCHOLAR</h3>
+          <p>
+            Global Education Guided by Research & Ethics. <br />
+            Supporting students with responsible and transparent international
+            education pathways.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="collaborations.html">Collaborations</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="contact.html" target="_blank">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/1EWXGP1pPR/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="social-text">
+            Stay connected for updates, admissions & scholarships.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 IISCHOLAR All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const destDropdown = document.querySelector(".dropdown");
+        const destToggle = document.querySelector(".dropdown > a");
+
+        if (!hamburger || !navLinks) return;
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          navLinks.classList.toggle("open");
+        });
+
+        destToggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            destDropdown.classList.toggle("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

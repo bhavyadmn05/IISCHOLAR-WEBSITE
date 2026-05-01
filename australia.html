@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IISCHOLAR</title>
+
+    <link rel="stylesheet" href="europe.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-left">
+          <img src="logo.png" alt="logo" class="nav-logo" />
+          <span class="brand">IISCHOLAR</span>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li class="dropdown">
+            <a href="#">Destinations ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="europe.html" target="_blank">Europe</a></li>
+              <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+              <li><a href="canada.html" target="_blank">Canada</a></li>
+              <li><a href="australia.html" target="_blank">Australia</a></li>
+              <li><a href="japan.html" target="_blank">Japan</a></li>
+              <li><a href="india.html" target="_blank">India</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html" target="_blank">Services</a></li>
+          <li>
+            <a href="collaborations.html" target="_blank">Collaborations</a>
+          </li>
+          <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+          <li><a href="events.html" target="_blank">Events</a></li>
+          <li class="mobile-cta">
+            <div class="cta-wrapper">
+              <button
+                class="nav-btn"
+                onclick="
+                  window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+                "
+              >
+                Book Session
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="nav-right">
+          <div class="cta-wrapper">
+            <span class="pointer">👉</span>
+            <button
+              class="nav-btn"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Session
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="europe-hero"
+      style="
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(&quot;https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80&quot;)
+            center/cover no-repeat;
+      "
+    >
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Study in Australia</h1>
+          <p class="subheading">
+            World-Class Education in a Sun-Soaked, Opportunity-Rich Environment
+          </p>
+          <p class="tagline">
+            Melbourne • Sydney • ANU • Work While You Study • 2–4 Year
+            Post-Study Work Visa
+          </p>
+          <div class="hero-buttons">
+            <button
+              class="btn primary"
+              onclick="window.open('services.html', '_blank')"
+            >
+              Explore Programs
+            </button>
+            <button
+              class="btn secondary"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Counselling
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down">↓</div>
+    </section>
+
+    <section class="country-section">
+      <div class="container">
+        <h2>Why Study in Australia</h2>
+
+        <p class="section-desc">
+          Australia offers world-class education in a relaxed, sunny environment
+          — with universities like Melbourne, Sydney, and ANU consistently
+          ranking in the global top 100. The "work while you study" policy
+          allows 48 hours of work per fortnight during semesters, helping offset
+          living costs. Australia's strong economy in mining, healthcare, and
+          technology creates abundant opportunities, while the Temporary
+          Graduate Visa provides 2–4 years of post-study work rights with
+          well-established skilled migration pathways.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 0">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/globe.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Top 100 Universities</h3>
+              <p>
+                Melbourne, Sydney & ANU ranked consistently in the global top
+                100
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 1">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Academic Background.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Work While You Study</h3>
+              <p>
+                48 hours per fortnight during semester to support your finances
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 2">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Training.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Temporary Graduate Visa</h3>
+              <p>
+                2–4 years post-study work rights with skilled migration pathways
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 3">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Learn More.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Asia-Pacific Hub</h3>
+              <p>
+                Strategic gateway to Asia-Pacific business and trade networks
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 4">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/history.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Lifestyle & Culture</h3>
+              <p>Beaches, outdoors, and a vibrant multicultural society</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 5">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Research.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Research Excellence</h3>
+              <p>Leading research in medicine, environment & marine science</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="country-section light">
+      <h2>Popular Courses</h2>
+
+      <div class="cards">
+        <!-- 1 Marine Biology & Environmental Science -->
+        <input type="radio" id="radio-1" name="radio-card" checked />
+        <article class="card" style="--angle: 4deg">
+          <img
+            class="card-img"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+          />
+          <div class="card-data">
+            <h2>Marine Biology & Environmental Science</h2>
+            <p>
+              Australia's unique ecosystems — including the Great Barrier Reef
+              and vast outback — make it a world-leading destination for
+              environmental and marine science. Universities like James Cook and
+              Queensland offer unrivalled field research access and produce
+              graduates driving global conservation efforts.
+            </p>
+            <footer>
+              <label for="radio-5">&#10094;</label>
+              <label for="radio-2">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 2 Hospitality & Tourism -->
+        <input type="radio" id="radio-2" name="radio-card" />
+        <article class="card" style="--angle: -8deg">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Hospitality & Tourism Management</h2>
+            <p>
+              Australia's thriving tourism industry — one of its largest
+              economic drivers — creates exceptional demand for qualified
+              hospitality professionals. Programmes at institutions like William
+              Angliss and Griffith University combine theoretical knowledge with
+              industry placements in world-class resorts and hotel groups.
+            </p>
+            <footer>
+              <label for="radio-1">&#10094;</label>
+              <label for="radio-3">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 3 Healthcare & Medicine -->
+        <input type="radio" id="radio-3" name="radio-card" />
+        <article class="card" style="--angle: -6deg">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Healthcare & Medicine</h2>
+            <p>
+              Australian medical and healthcare programmes are globally
+              respected for their high standards, modern facilities, and
+              clinical training. Universities like Melbourne, Sydney, and Monash
+              offer strong pathways into Australia's healthcare system, with
+              chronic demand for nurses, doctors, and allied health
+              professionals.
+            </p>
+            <footer>
+              <label for="radio-2">&#10094;</label>
+              <label for="radio-4">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 4 Business & Accounting -->
+        <input type="radio" id="radio-4" name="radio-card" />
+        <article class="card" style="--angle: 10deg">
+          <img
+            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Business & Accounting</h2>
+            <p>
+              Australia's position as an Asia-Pacific trade hub makes it ideal
+              for business and accounting studies. Top institutions like UNSW,
+              Melbourne Business School, and Macquarie offer programmes with a
+              strong focus on regional commerce, finance, and CPA-aligned
+              accounting qualifications recognised across the Asia-Pacific.
+            </p>
+            <footer>
+              <label for="radio-3">&#10094;</label>
+              <label for="radio-5">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 5 Engineering & Mining Technology -->
+        <input type="radio" id="radio-5" name="radio-card" />
+        <article class="card" style="--angle: 15deg">
+          <img
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Engineering & Mining Technology</h2>
+            <p>
+              Australia's vast natural resources and booming mining sector
+              create unmatched demand for engineering graduates. Universities
+              like Western Australia and Curtin lead in mining, civil, and
+              mechanical engineering, with direct industry partnerships and some
+              of the highest graduate salaries in the country.
+            </p>
+            <footer>
+              <label for="radio-4">&#10094;</label>
+              <label for="radio-1">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cost-section">
+      <h2 class="section-title">Cost & Scholarships</h2>
+
+      <div class="cost-highlight">
+        <div class="cost-box">
+          <h3>Tuition Fees</h3>
+          <p>AUD $20,000 – $45,000 / year</p>
+        </div>
+        <div class="cost-box">
+          <h3>Living Costs</h3>
+          <p>AUD $21,000 – $26,000 / year</p>
+        </div>
+      </div>
+
+      <div class="country-cost-grid">
+        <div class="country-cost-card">
+          <h4>Australia Awards 🇦🇺</h4>
+          <p>
+            Full funding — tuition, living allowance & travel for international
+            students
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>RTP Scholarships 🔬</h4>
+          <p>
+            Research Training Program — full fees & stipend for research degrees
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>Destination Australia 🌏</h4>
+          <p>
+            Up to AUD $15,000/year for students studying in regional Australia
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>University Awards 🏛</h4>
+          <p>
+            Merit-based scholarships offered by individual Australian
+            universities
+          </p>
+        </div>
+      </div>
+
+      <div class="scholarships">
+        <h3>Scholarships Available</h3>
+        <div class="scholarship-list">
+          <span>Australia Awards</span>
+          <span>RTP Scholarships</span>
+          <span>Destination Australia</span>
+          <span>Endeavour Leadership</span>
+          <span>University Grants</span>
+          <span>State Government Awards</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="visa-section-alt">
+      <h2 class="section-title">Visa Overview</h2>
+
+      <p class="visa-intro">
+        The Australian Student Visa (Subclass 500) allows you to study full-time
+        at a registered CRICOS institution. Known for its transparency and
+        efficiency, the application process is straightforward — and post-study
+        work rights are among the most generous in the world.
+      </p>
+
+      <div class="visa-timeline">
+        <div class="step">
+          <span>01</span>
+          <h4>Get CoE Letter</h4>
+          <p>Receive Confirmation of Enrolment from your CRICOS institution</p>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <h4>Prepare Documents</h4>
+          <p>
+            Financial proof, English scores, health insurance (OSHC) & health
+            exam
+          </p>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <h4>Apply Online</h4>
+          <p>Submit Subclass 500 application via ImmiAccount portal</p>
+        </div>
+
+        <div class="step">
+          <span>04</span>
+          <h4>Fly to Australia</h4>
+          <p>Begin your academic journey Down Under</p>
+        </div>
+      </div>
+
+      <div class="visa-info-strip">
+        <div>💰 <strong>Funds:</strong> AUD $21,041+ per year demonstrated</div>
+        <div>🗣 <strong>English:</strong> IELTS / PTE / TOEFL required</div>
+        <div>
+          🏥 <strong>Insurance:</strong> OSHC mandatory for full visa duration
+        </div>
+      </div>
+
+      <div class="post-study">
+        <h3>After Graduation</h3>
+
+        <div class="post-bar">
+          <div class="post-pill">
+            <span class="country">Temporary Graduate</span>
+            <span class="info">2–4 years post-study work (Subclass 485)</span>
+          </div>
+
+          <div class="post-pill">
+            <span class="country">Skilled Independent</span>
+            <span class="info"
+              >Points-based permanent residency (Subclass 189)</span
+            >
+          </div>
+
+          <div class="post-pill">
+            <span class="country">Employer Sponsored</span>
+            <span class="info"
+              >Employer-nominated visa pathway (Subclass 186)</span
+            >
+          </div>
+
+          <div class="post-pill highlight">
+            <span class="country">Australian PR</span>
+            <span class="info"
+              >Clear pathway to permanent residency & citizenship</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="who-section">
+      <h2>Who Should Choose Australia</h2>
+
+      <p class="who-intro">
+        Discover if Australia aligns with your goals, ambitions, and lifestyle.
+      </p>
+
+      <div class="who-tags">
+        <div class="tag">Outdoor & Beach Lifestyle Seekers</div>
+        <div class="tag">Work-While-You-Study Students</div>
+        <div class="tag">Healthcare & Medicine Aspirants</div>
+        <div class="tag">Mining & Engineering Professionals</div>
+        <div class="tag">Marine & Environmental Scientists</div>
+        <div class="tag">Asia-Pacific Business Aspirants</div>
+        <div class="tag">Skilled Migration Seekers</div>
+        <div class="tag">Hospitality & Tourism Students</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <h2>Begin Your Australian Education Journey</h2>
+        <p>
+          Whether you are a student, parent, or institutional partner, we invite
+          you to connect with us and explore pathways aligned with your
+          aspirations.
+        </p>
+        <div class="cta-buttons">
+          <button
+            class="cta-btn primary"
+            onclick="window.open('contact.html', '_blank')"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="footer-bg"></div>
+
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>IISCHOLAR</h3>
+          <p>
+            Global Education Guided by Research & Ethics. <br />
+            Supporting students with responsible and transparent international
+            education pathways.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="collaborations.html">Collaborations</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="contact.html" target="_blank">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/1EWXGP1pPR/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="social-text">
+            Stay connected for updates, admissions & scholarships.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 IISCHOLAR All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const destDropdown = document.querySelector(".dropdown");
+        const destToggle = document.querySelector(".dropdown > a");
+
+        if (!hamburger || !navLinks) return;
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          navLinks.classList.toggle("open");
+        });
+
+        destToggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            destDropdown.classList.toggle("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

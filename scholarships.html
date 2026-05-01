@@ -1,0 +1,1950 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Global Scholarships — Premier Education Consultancy</title>
+
+    <style>
+      :root {
+        --color-primary: #0d2b4d;
+        --color-gold: #c89b3c;
+        --color-gold-dark: #a67c2f;
+        --color-white: #ffffff;
+        --transition-base: 0.3s ease;
+      }
+
+      /* =============================================================================
+   NAVBAR
+============================================================================= */
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 50px;
+        background: var(--color-white);
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-logo {
+        height: 55px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .brand {
+        color: var(--color-primary);
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      /* -----------------------------------------------------------------------------
+   Nav Links
+----------------------------------------------------------------------------- */
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 35px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15.5px;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding: 5px 0;
+        transition: all var(--transition-base);
+      }
+
+      /* Underline animation */
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--color-gold),
+          var(--color-gold-dark)
+        );
+        transition: all var(--transition-base);
+        transform: translateX(-50%);
+      }
+
+      .nav-links a:hover {
+        color: var(--color-gold);
+        transform: translateY(-2px);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* -----------------------------------------------------------------------------
+   CTA Button
+----------------------------------------------------------------------------- */
+
+      .cta-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .pointer {
+        font-size: 20px;
+        animation: pointAnim 1.5s infinite;
+      }
+
+      @keyframes pointAnim {
+        0%,
+        100% {
+          transform: translateX(0);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateX(8px);
+          opacity: 1;
+        }
+      }
+
+      .nav-btn {
+        background: linear-gradient(
+          135deg,
+          var(--color-gold),
+          var(--color-gold-dark)
+        );
+        color: var(--color-white);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        transition: all var(--transition-base);
+      }
+
+      .nav-btn::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 25px;
+        animation: pulseGlow 2s infinite;
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(200, 155, 60, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(200, 155, 60, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(200, 155, 60, 0);
+        }
+      }
+
+      .nav-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(200, 155, 60, 0.4);
+      }
+
+      .nav-btn:active {
+        transform: scale(0.95);
+      }
+
+      /* -----------------------------------------------------------------------------
+   Dropdown
+----------------------------------------------------------------------------- */
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--color-white);
+        border-radius: 10px;
+        padding: 10px 0;
+        list-style: none;
+        min-width: 180px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        top: 140%;
+      }
+
+      .dropdown-menu li {
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        color: var(--color-primary);
+        font-size: 14px;
+        text-decoration: none;
+        transition: var(--transition-base);
+      }
+
+      .dropdown-menu a:hover {
+        background: rgba(200, 155, 60, 0.1);
+        color: var(--color-gold);
+        padding-left: 25px;
+      }
+
+      /* -----------------------------------------------------------------------------
+   Hamburger
+----------------------------------------------------------------------------- */
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+        z-index: 1100;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--color-primary);
+        border-radius: 3px;
+        transition: all var(--transition-base);
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* Mobile CTA — hidden by default, shown inside menu on mobile */
+      .nav-links .mobile-cta {
+        display: none;
+      }
+
+      /* =============================================================================
+   RESPONSIVE — TABLET  (max-width: 1024px)
+============================================================================= */
+
+      @media (max-width: 1024px) {
+        .navbar {
+          padding: 10px 25px;
+        }
+      }
+
+      /* =============================================================================
+   RESPONSIVE — SMALL TABLET / LARGE MOBILE  (max-width: 900px)
+============================================================================= */
+
+      @media (max-width: 900px) {
+        .navbar {
+          padding: 10px 24px;
+          flex-wrap: wrap;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          gap: 0;
+          width: 100%;
+          background: var(--color-white);
+          border-top: 1px solid #eee;
+          padding: 12px 0;
+          margin-top: 10px;
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links a {
+          display: block;
+          padding: 12px 24px;
+          font-size: 15px;
+        }
+
+        .nav-links a::after {
+          display: none;
+        }
+
+        .nav-links a:hover {
+          transform: none;
+          padding-left: 32px;
+          background: rgba(200, 155, 60, 0.06);
+        }
+
+        /* Dropdown becomes accordion on mobile */
+        .dropdown-menu {
+          position: static;
+          transform: none;
+          box-shadow: none;
+          border-radius: 0;
+          padding: 0 0 0 16px;
+          opacity: 1;
+          visibility: visible;
+          display: none;
+          min-width: unset;
+        }
+
+        .dropdown.open .dropdown-menu {
+          display: block;
+        }
+
+        .dropdown > a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        /* Hide desktop CTA; show mobile CTA inside menu */
+        .nav-right {
+          display: none;
+        }
+
+        .nav-links .mobile-cta {
+          display: block;
+          padding: 16px 24px 8px;
+        }
+
+        .nav-links .mobile-cta .nav-btn {
+          width: 100%;
+          padding: 12px 20px;
+          font-size: 15px;
+        }
+
+        .nav-links .mobile-cta .pointer {
+          display: none;
+        }
+      }
+
+      /* =============================================================================
+   RESPONSIVE — MOBILE  (max-width: 768px)
+============================================================================= */
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+          font-size: 22px;
+          cursor: pointer;
+          color: var(--color-primary);
+        }
+
+        .nav-right {
+          display: none;
+        }
+      }
+
+      /* =============================================================================
+   RESPONSIVE — SMALL MOBILE  (max-width: 480px)
+============================================================================= */
+
+      @media (max-width: 480px) {
+        .brand {
+          font-size: 16px;
+        }
+        .nav-logo {
+          height: 40px;
+        }
+      }
+
+      /* ── VARIABLES ─────────────────────────────────────────── */
+      :root {
+        --navy: #07192e;
+        --blue: #0d2b4d;
+        --mid: #112f55;
+        --gold: #c89b3c;
+        --gold-lt: #e0bb6a;
+        --gold-dk: #9a7528;
+        --white: #ffffff;
+        --off: #eef2f7;
+        --muted: #8ba3be;
+        --card-bg: rgba(13, 43, 77, 0.55);
+        --border: rgba(200, 155, 60, 0.18);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        font-family: Arial, sans-serif;
+        --transition: 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* ── RESET ─────────────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        background: var(--navy);
+        color: var(--white);
+        font-family: Arial, sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* ── NOISE TEXTURE OVERLAY ─────────────────────────────── */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.6;
+      }
+
+      /* ── HERO ──────────────────────────────────────────────── */
+      #hero {
+        margin-top: -60px;
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 5vw;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 50% 20%,
+            rgba(200, 155, 60, 0.12) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 60% 80% at 10% 80%,
+            rgba(13, 43, 77, 0.9) 0%,
+            transparent 70%
+          ),
+          linear-gradient(160deg, #07192e 0%, #0d2b4d 50%, #07192e 100%);
+        z-index: -1;
+      }
+      /* Decorative gold orbs */
+      .hero-bg::before,
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+      }
+      .hero-bg::before {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(200, 155, 60, 0.15),
+          transparent 70%
+        );
+        top: -100px;
+        right: -100px;
+        animation: drift 12s ease-in-out infinite alternate;
+      }
+      .hero-bg::after {
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(
+          circle,
+          rgba(13, 43, 77, 0.6),
+          transparent 70%
+        );
+        bottom: 0;
+        left: -80px;
+        animation: drift 16s ease-in-out infinite alternate-reverse;
+      }
+      @keyframes drift {
+        from {
+          transform: translate(0, 0) scale(1);
+        }
+        to {
+          transform: translate(30px, 20px) scale(1.08);
+        }
+      }
+
+      /* Decorative line */
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.4rem;
+        opacity: 0;
+        animation: fadeUp 0.8s 0.2s forwards;
+      }
+      .hero-eyebrow::before,
+      .hero-eyebrow::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.6;
+      }
+
+      .hero h1 {
+        margin-top: -20px;
+        font-family: Arial, sans-serif;
+        font-size: clamp(5.5rem, 18vw, 16rem);
+        font-weight: 300;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.6rem;
+        opacity: 0;
+        animation: fadeUp 0.9s 0.35s forwards;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .hero-sub {
+        max-width: 620px;
+        font-size: 1.25rem;
+        color: var(--muted);
+        font-weight: 300;
+        margin: 0 auto 0;
+        opacity: 0;
+        animation: fadeUp 0.9s 0.5s forwards;
+      }
+      .btn-gold {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.9rem 2.2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 0 12px rgba(200, 155, 60, 0.5);
+        border-radius: 8px;
+
+        transition:
+          background var(--transition),
+          transform var(--transition),
+          box-shadow var(--transition);
+        box-shadow: 0 4px 24px rgba(200, 155, 60, 0.25);
+      }
+      .btn-gold:hover {
+        background: var(--gold-lt);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(200, 155, 60, 0.4);
+      }
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.9rem 2.2rem;
+        background: transparent;
+        color: var(--white);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 3px;
+        cursor: pointer;
+        transition:
+          border-color var(--transition),
+          background var(--transition),
+          transform var(--transition);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold);
+        background: rgba(200, 155, 60, 0.07);
+        transform: translateY(-2px);
+      }
+
+      /* Hero stats */
+      .hero-stats {
+        display: flex;
+        gap: 3rem;
+        justify-content: center;
+        margin-top: 4rem;
+        padding-top: 3rem;
+        border-top: 1px solid var(--border);
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeUp 0.9s 0.8s forwards;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-num {
+        font-family: Arial, sans-serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--gold);
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+
+      /* Scroll indicator */
+      .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        animation: bounce 2s ease-in-out infinite;
+      }
+      .scroll-hint svg {
+        width: 16px;
+        opacity: 0.5;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ── SECTION COMMONS ───────────────────────────────────── */
+      section {
+        position: relative;
+        z-index: 1;
+      }
+      .section-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5vw;
+      }
+
+      .section-label {
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.8rem;
+      }
+      .section-title {
+        font-family: Arial, sans-serif;
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        font-weight: 300;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .section-sub {
+        font-size: 0.98rem;
+        color: var(--muted);
+        max-width: 500px;
+      }
+
+      /* ── SCHOLARSHIPS SECTION ──────────────────────────────── */
+      #scholarships {
+        padding: 7rem 0;
+        background: #f0f4f8;
+        color: var(--navy);
+      }
+      #scholarships .section-label {
+        color: var(--gold-dk);
+      }
+      #scholarships .section-title {
+        color: var(--navy);
+      }
+      #scholarships .section-title em {
+        color: var(--gold-dk);
+      }
+      #scholarships .section-sub {
+        color: #5a7a99;
+      }
+      #scholarships .card {
+        background: linear-gradient(145deg, #0d2b4d 0%, #07192e 100%);
+        border: 1px solid rgba(200, 155, 60, 0.25);
+        color: var(--white);
+        backdrop-filter: none;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+      #scholarships .card::before {
+        background: linear-gradient(
+          135deg,
+          rgba(200, 155, 60, 0.08) 0%,
+          transparent 55%
+        );
+      }
+      #scholarships .card::after {
+        background: linear-gradient(
+          135deg,
+          transparent 50%,
+          rgba(200, 155, 60, 0.18) 50%
+        );
+      }
+      #scholarships .card:hover {
+        border-color: var(--gold);
+        box-shadow:
+          0 0 0 1px rgba(200, 155, 60, 0.2),
+          0 24px 64px rgba(0, 0, 0, 0.45),
+          0 0 50px rgba(200, 155, 60, 0.12);
+      }
+      #scholarships .card h3 {
+        color: var(--white);
+      }
+      #scholarships .card-region {
+        color: var(--gold);
+      }
+      #scholarships .card-desc {
+        color: #8ba3be;
+      }
+      #scholarships .card-divider {
+        background: rgba(200, 155, 60, 0.2);
+      }
+      #scholarships .card-label {
+        color: var(--gold);
+      }
+      #scholarships .card-benefits li {
+        color: #c8ddf0;
+      }
+      #scholarships .card-benefits li::before {
+        background: var(--gold);
+      }
+      #scholarships .card-eligibility {
+        color: #7a9ab8;
+      }
+      #scholarships .card-eligibility strong {
+        color: var(--white);
+      }
+      #scholarships .btn-apply {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      #scholarships .btn-apply:hover {
+        background: var(--gold);
+        color: var(--navy);
+        box-shadow: 0 6px 24px rgba(200, 155, 60, 0.35);
+      }
+      .scholarships-header {
+        margin-bottom: 3.5rem;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+      }
+      /* Last two cards centered */
+      .cards-grid .card:nth-child(4) {
+        grid-column: 1 / 2;
+      }
+      .cards-grid .card:nth-child(4),
+      .cards-grid .card:nth-child(5) {
+        grid-column: auto;
+      }
+      /* Row 2: 2 cards centered */
+      .cards-row-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+        max-width: 66%;
+        margin: 1.6rem auto 0;
+      }
+
+      /* CARD */
+      .card {
+        position: relative;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 2.2rem;
+        backdrop-filter: blur(20px) saturate(1.3);
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition),
+          border-color var(--transition);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      .card.visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease,
+          box-shadow var(--transition),
+          border-color var(--transition);
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(200, 155, 60, 0.06) 0%,
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity var(--transition);
+        pointer-events: none;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(200, 155, 60, 0.55);
+        box-shadow:
+          0 0 0 1px rgba(200, 155, 60, 0.15),
+          0 20px 60px rgba(0, 0, 0, 0.5),
+          0 0 40px rgba(200, 155, 60, 0.08);
+      }
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      /* Card corner accent */
+      .card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          transparent 50%,
+          rgba(200, 155, 60, 0.15) 50%
+        );
+        border-radius: 0 8px 0 0;
+        pointer-events: none;
+      }
+
+      .card-flag {
+        font-size: 1.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .card-region {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.6rem;
+      }
+      .card-region svg {
+        width: 10px;
+        opacity: 0.7;
+      }
+      .card h3 {
+        font-family: Arial, sans-serif;
+        font-size: 1.45rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
+        color: var(--white);
+      }
+      .card-desc {
+        font-size: 0.87rem;
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+      }
+
+      .card-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 1.2rem 0;
+      }
+
+      .card-label {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .card-benefits {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-bottom: 1.2rem;
+      }
+      .card-benefits li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.83rem;
+        color: var(--off);
+      }
+      .card-benefits li::before {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+
+      .card-eligibility {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 1.6rem;
+      }
+      .card-eligibility strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      .btn-apply {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: center;
+        padding: 0.82rem 1.5rem;
+        background: transparent;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border-radius: 3px;
+        cursor: pointer;
+        transition:
+          background var(--transition),
+          color var(--transition),
+          transform var(--transition),
+          box-shadow var(--transition);
+      }
+      .btn-apply:hover {
+        background: var(--gold);
+        color: var(--navy);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(200, 155, 60, 0.3);
+      }
+      .btn-apply svg {
+        width: 14px;
+        transition: transform var(--transition);
+      }
+      .btn-apply:hover svg {
+        transform: translateX(3px);
+      }
+
+      /* ── PROCESS SECTION ───────────────────────────────────── */
+      #process {
+        padding: 7rem 0;
+        background: var(--navy);
+        position: relative;
+        overflow: hidden;
+      }
+      #process::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(
+          circle,
+          rgba(200, 155, 60, 0.04),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .process-header {
+        margin-bottom: 4rem;
+      }
+      .steps-track {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        position: relative;
+      }
+      /* Connecting line */
+      .steps-track::before {
+        content: "";
+        position: absolute;
+        top: 2.5rem;
+        left: calc(12.5% + 1rem);
+        right: calc(12.5% + 1rem);
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          var(--gold) 0%,
+          rgba(200, 155, 60, 0.2) 100%
+        );
+      }
+      .step {
+        text-align: center;
+        padding: 0 1.5rem;
+        position: relative;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .step.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .step-icon {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background: var(--blue);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.4rem;
+        position: relative;
+        z-index: 1;
+        transition:
+          border-color var(--transition),
+          background var(--transition);
+      }
+      .step:hover .step-icon {
+        border-color: var(--gold);
+        background: rgba(200, 155, 60, 0.1);
+      }
+      .step-num {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 22px;
+        height: 22px;
+        background: var(--gold);
+        color: var(--navy);
+        border-radius: 50%;
+        font-size: 0.65rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .step-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .step h4 {
+        font-family: Arial, sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .step p {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* ── CTA SECTION ───────────────────────────────────────── */
+      #cta {
+        padding: 7rem 0;
+        background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .cta-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 300px;
+        background: radial-gradient(
+          ellipse,
+          rgba(200, 155, 60, 0.12),
+          transparent 70%
+        );
+        pointer-events: none;
+        border-radius: 50%;
+      }
+      .headings {
+        font-size: 2em;
+      }
+      .cta-content {
+        position: relative;
+        z-index: 1;
+      }
+      #cta .section-title {
+        margin-bottom: 1.2rem;
+      }
+      #cta .section-sub {
+        margin: 0 auto 2.5rem;
+        max-width: 480px;
+      }
+
+      /* ── ANIMATIONS ────────────────────────────────────────── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── RESPONSIVE ────────────────────────────────────────── */
+      @media (max-width: 1024px) {
+        .cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .cards-row-2 {
+          max-width: 100%;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .steps-track {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+        }
+        .steps-track::before {
+          display: none;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 3.5rem;
+        }
+        .cards-grid,
+        .cards-row-2 {
+          grid-template-columns: 1fr;
+        }
+        .steps-track {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+      }
+      
+.footer {
+  position: relative;
+  background: linear-gradient(135deg, #071a2e, #0D2B4D);
+  color: white;
+  padding: 80px 40px 20px;
+  overflow: hidden;
+}
+
+/* subtle world map background */
+.footer-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg");
+  background-size: cover;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* layout */
+.footer-container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+/* headings */
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.footer-col h4 {
+  color: #C89B3C;
+  margin-bottom: 15px;
+}
+
+/* text */
+.footer-col p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #C89B3C;
+  padding-left: 4px;
+}
+
+/* social icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background: #C89B3C;
+  color: #0D2B4D;
+  transform: translateY(-3px);
+}
+
+/* bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+  padding-top: 15px;
+  text-align: center;
+  color: #888;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <!-- Logo + Brand -->
+        <div class="nav-left">
+          <img src="logo.png" alt="logo" class="nav-logo" />
+          <span class="brand">IISCHOLAR</span>
+        </div>
+
+        <!-- Hamburger (outside nav-left) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+
+          <!-- DROPDOWN -->
+          <li class="dropdown">
+            <a href="#">Destinations ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="europe.html" target="_blank">Europe</a></li>
+              <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+              <li><a href="canada.html" target="_blank">Canada</a></li>
+              <li><a href="australia.html" target="_blank">Australia</a></li>
+              <li><a href="japan.html" target="_blank">Japan</a></li>
+              <li><a href="india.html" target="_blank">India</a></li>
+            </ul>
+          </li>
+
+          <li><a href="services.html" target="_blank">Services</a></li>
+          <li>
+            <a href="collaborations.html" target="_blank">Collaborations</a>
+          </li>
+          <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+          <li><a href="events.html" target="_blank">Events</a></li>
+
+          <!-- Mobile-only Book Session (last item) -->
+          <li class="mobile-cta">
+            <div class="cta-wrapper">
+              <button
+                class="nav-btn"
+                onclick="
+                  window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+                "
+              >
+                Book Session
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="nav-right">
+          <div class="cta-wrapper">
+            <span class="pointer">👉</span>
+            <button
+              class="nav-btn"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Session
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+
+      <div class="hero-eyebrow">
+        <span>Your Future Starts Here</span>
+      </div>
+      <div class="headings">
+        <h1>Top <em>Global</em><br />Scholarships</h1>
+      </div>
+
+      <p class="hero-sub">
+        Unlock fully funded opportunities across the world — curated for
+        exceptional students ready to make their mark.
+      </p>
+
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- SCHOLARSHIPS -->
+    <section id="scholarships">
+      <div class="section-inner">
+        <div class="scholarships-header">
+          <div class="section-label">Curated Opportunities</div>
+          <h2 class="section-title">
+            Premium <em>Scholarships</em><br />Worldwide
+          </h2>
+          <p class="section-sub">
+            Hand-picked, fully vetted scholarships from the world's leading
+            institutions.
+          </p>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid">
+          <!-- Card 1 -->
+          <div class="card" data-delay="0">
+            <div class="card-flag">🇳🇱</div>
+            <div class="card-region">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+              Netherlands
+            </div>
+            <h3>Orange Tulip Scholarship</h3>
+            <p class="card-desc">
+              Funded by Dutch universities for international students, offering
+              world-class education in one of Europe's most innovative academic
+              environments.
+            </p>
+            <div class="card-divider"></div>
+            <div class="card-label">Benefits</div>
+            <ul class="card-benefits">
+              <li>Partial to full tuition coverage</li>
+              <li>Monthly stipend (varies by institution)</li>
+              <li>Access to Dutch university networks</li>
+            </ul>
+            <div class="card-eligibility">
+              <strong>Eligibility:</strong> International students from eligible
+              countries; requirements vary by university partner.
+            </div>
+            <a
+              href="https://www.studyinnl.org/finances"
+              target="_blank"
+              class="btn-apply"
+            >
+              Apply Now
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 10h12M11 5l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card" data-delay="120">
+            <div class="card-flag">🇯🇵</div>
+            <div class="card-region">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+              Japan
+            </div>
+            <h3>MEXT Scholarship</h3>
+            <p class="card-desc">
+              Japan's prestigious government scholarship — one of the most
+              comprehensive fully funded programs for international students
+              pursuing undergraduate or postgraduate studies.
+            </p>
+            <div class="card-divider"></div>
+            <div class="card-label">Benefits</div>
+            <ul class="card-benefits">
+              <li>Full tuition waiver</li>
+              <li>Monthly stipend (¥117,000–¥144,000)</li>
+              <li>Round-trip airfare covered</li>
+            </ul>
+            <div class="card-eligibility">
+              <strong>Eligibility:</strong> Applicants under 35 years; strong
+              academic record; Japanese or English language proficiency.
+            </div>
+            <a
+              href="https://www.studyinjapan.go.jp/en/smap-stopj-applications-scholarships/"
+              target="_blank"
+              class="btn-apply"
+            >
+              Apply Now
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 10h12M11 5l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card" data-delay="240">
+            <div class="card-flag">🇬🇧</div>
+            <div class="card-region">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+              United Kingdom
+            </div>
+            <h3>Commonwealth Scholarship</h3>
+            <p class="card-desc">
+              The UK government's flagship international scholarship for
+              citizens of Commonwealth nations, fostering leadership and
+              knowledge exchange across the globe.
+            </p>
+            <div class="card-divider"></div>
+            <div class="card-label">Benefits</div>
+            <ul class="card-benefits">
+              <li>Full tuition at UK universities</li>
+              <li>Living allowance & stipend</li>
+              <li>Return travel to the UK</li>
+            </ul>
+            <div class="card-eligibility">
+              <strong>Eligibility:</strong> Citizens of Commonwealth countries;
+              Bachelor's degree (2:1 or above); commitment to development.
+            </div>
+            <a
+              href="https://cscuk.fcdo.gov.uk/scholarships/"
+              target="_blank"
+              class="btn-apply"
+            >
+              Apply Now
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 10h12M11 5l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- /cards-grid -->
+
+        <div class="cards-row-2" id="cardsRow2">
+          <!-- Card 4 -->
+          <div class="card" data-delay="0">
+            <div class="card-flag">🇺🇸</div>
+            <div class="card-region">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+              United States
+            </div>
+            <h3>Fulbright Scholarship</h3>
+            <p class="card-desc">
+              The world's most prestigious exchange program, funded by the US
+              government, empowering future leaders through academic excellence
+              and cross-cultural understanding.
+            </p>
+            <div class="card-divider"></div>
+            <div class="card-label">Benefits</div>
+            <ul class="card-benefits">
+              <li>Full tuition at US institutions</li>
+              <li>Monthly living stipend</li>
+              <li>Return airfare & health insurance</li>
+            </ul>
+            <div class="card-eligibility">
+              <strong>Eligibility:</strong> Bachelor's degree holders; strong
+              academic and professional record; English proficiency required.
+            </div>
+            <a
+              href="https://foreign.fulbrightonline.org/"
+              target="_blank"
+              class="btn-apply"
+            >
+              Apply Now
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 10h12M11 5l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card" data-delay="140">
+            <div class="card-flag">🇪🇺</div>
+            <div class="card-region">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+              Europe
+            </div>
+            <h3>Erasmus Mundus Joint Master</h3>
+            <p class="card-desc">
+              An elite EU-funded program offering fully funded master's degrees
+              across multiple prestigious European universities — a truly
+              international academic experience.
+            </p>
+            <div class="card-divider"></div>
+            <div class="card-label">Benefits</div>
+            <ul class="card-benefits">
+              <li>Full tuition across partner universities</li>
+              <li>Monthly stipend up to €1,400</li>
+              <li>Travel & installation allowances</li>
+            </ul>
+            <div class="card-eligibility">
+              <strong>Eligibility:</strong> Bachelor's degree; open to all
+              nationalities; strong academic standing and motivation letter.
+            </div>
+            <a
+              href="https://erasmus-plus.ec.europa.eu/opportunities"
+              target="_blank"
+              class="btn-apply"
+            >
+              Apply Now
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 10h12M11 5l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- /cards-row-2 -->
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="section-inner">
+        <div class="process-header">
+          <div class="section-label">How It Works</div>
+          <h2 class="section-title">
+            Your Path to a<br /><em>Scholarship</em>
+          </h2>
+          <p class="section-sub">
+            Four clear steps from discovery to acceptance — we guide you every
+            step of the way.
+          </p>
+        </div>
+
+        <div class="steps-track">
+          <div class="step" data-delay="0">
+            <div class="step-icon">
+              <span class="step-num">1</span>
+              <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </div>
+            <h4>Choose Scholarship</h4>
+            <p>
+              Browse our curated database of fully funded scholarships and
+              shortlist the ones that match your profile and goals.
+            </p>
+          </div>
+
+          <div class="step" data-delay="120">
+            <div class="step-icon">
+              <span class="step-num">2</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M9 11l3 3L22 4" />
+                <path
+                  d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"
+                />
+              </svg>
+            </div>
+            <h4>Check Eligibility</h4>
+            <p>
+              Review eligibility criteria carefully. Our counselors can help
+              evaluate your profile against each scholarship's requirements.
+            </p>
+          </div>
+
+          <div class="step" data-delay="240">
+            <div class="step-icon">
+              <span class="step-num">3</span>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14,2 14,8 20,8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <h4>Prepare Documents</h4>
+            <p>
+              Compile your transcripts, motivation letter, references, and
+              passport. We provide expert SOP and CV review services.
+            </p>
+          </div>
+
+          <div class="step" data-delay="360">
+            <div class="step-icon">
+              <span class="step-num">4</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M22 2L11 13" />
+                <path d="M22 2L15 22 11 13 2 9l20-7z" />
+              </svg>
+            </div>
+            <h4>Apply</h4>
+            <p>
+              Submit your application before the deadline. Track your progress
+              through our portal and get notified on every update.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+      <div class="cta-glow"></div>
+      <div class="section-inner cta-content">
+        <div class="section-label">Take The First Step</div>
+        <h2 class="section-title">
+          Start Your Study Abroad<br /><em>Journey Today</em>
+        </h2>
+        <p class="section-sub">
+          Our expert counselors have helped over 10,000 students secure
+          scholarships at the world's best universities.
+        </p>
+        <a
+          onclick="
+                  window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+                "
+          class="btn-gold"
+          style="display: inline-flex; margin-top: 0.5rem"
+        >
+          Book Counseling
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px">
+            <path d="M4 10h12M11 5l5 5-5 5" />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <footer class="footer" id="footer">
+
+  <div class="footer-bg"></div>
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>IISCHOLAR</h3>
+      <p>
+        Global Education Guided by Research & Ethics. </br> 
+        Supporting students with responsible and transparent international education pathways.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        
+        <li><a href="#about">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collaborations.html">Collaborations</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="contact.html" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Social</h4>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1EWXGP1pPR/" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg==" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-linkedin-in"></i>
+</a>
+      </div>
+
+      <p class="social-text">
+        Stay connected for updates, admissions & scholarships.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026  IISCHOLAR All rights reserved.</p>
+  </div>
+
+</footer>
+
+    
+
+    <script>
+      
+      // ── INTERSECTION OBSERVER ─────────────────────────────
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const delay = entry.target.dataset.delay || 0;
+              setTimeout(() => {
+                entry.target.classList.add("visible");
+              }, parseInt(delay));
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".card, .step")
+        .forEach((el) => observer.observe(el));
+
+      // ── SMOOTH ANCHOR SCROLL ──────────────────────────────
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+      
+
+    
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const destDropdown = document.querySelector(".dropdown");
+        const destToggle = document.querySelector(".dropdown > a");
+
+        if (!hamburger || !navLinks) return;
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          navLinks.classList.toggle("open");
+        });
+
+        destToggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            destDropdown.classList.toggle("open");
+          }
+        });
+      });
+    
+    </script>
+  </body>
+</html>

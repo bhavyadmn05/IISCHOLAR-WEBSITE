@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IISCHOLAR</title>
+
+    <link rel="stylesheet" href="europe.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-left">
+          <img src="logo.png" alt="logo" class="nav-logo" />
+          <span class="brand">IISCHOLAR</span>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li class="dropdown">
+            <a href="#">Destinations ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="europe.html" target="_blank">Europe</a></li>
+              <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+              <li><a href="canada.html" target="_blank">Canada</a></li>
+              <li><a href="australia.html" target="_blank">Australia</a></li>
+              <li><a href="japan.html" target="_blank">Japan</a></li>
+              <li><a href="india.html" target="_blank">India</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html" target="_blank">Services</a></li>
+          <li>
+            <a href="collaborations.html" target="_blank">Collaborations</a>
+          </li>
+          <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+          <li><a href="events.html" target="_blank">Events</a></li>
+          <li class="mobile-cta">
+            <div class="cta-wrapper">
+              <button
+                class="nav-btn"
+                onclick="
+                  window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+                "
+              >
+                Book Session
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="nav-right">
+          <div class="cta-wrapper">
+            <span class="pointer">👉</span>
+            <button
+              class="nav-btn"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Session
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="europe-hero"
+      style="
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(&quot;https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80&quot;)
+            center/cover no-repeat;
+      "
+    >
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Study in India</h1>
+          <p class="subheading">
+            World-Class Institutions at Exceptional Value — Ancient Wisdom Meets
+            Modern Innovation
+          </p>
+          <p class="tagline">
+            IITs • IIMs • AIIMS • Bangalore • Hyderabad • Affordable Excellence
+          </p>
+          <div class="hero-buttons">
+            <button
+              class="btn primary"
+              onclick="window.open('services.html', '_blank')"
+            >
+              Explore Programs
+            </button>
+            <button
+              class="btn secondary"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Counselling
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down">↓</div>
+    </section>
+
+    <section class="country-section">
+      <div class="container">
+        <h2>Why Study in India</h2>
+
+        <p class="section-desc">
+          India is rapidly emerging as a major global education destination,
+          offering world-class institutions like the IITs (Indian Institutes of
+          Technology), IIMs (Indian Institutes of Management), and AIIMS at a
+          fraction of Western costs. The country's booming tech industry — with
+          thriving hubs in Bangalore, Hyderabad, and Pune — provides practical
+          exposure to one of the world's fastest-growing economies. India's rich
+          cultural heritage spanning 5,000 years, diverse landscapes from the
+          Himalayas to tropical beaches, and spiritual traditions offer a
+          transformative experience far beyond academics. With English widely
+          spoken across academia and industry, and an exceptionally affordable
+          cost of living, India lets international students experience more with
+          less.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 0">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/globe.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Prestigious Institutions</h3>
+              <p>
+                IITs, IIMs & AIIMS — globally recognised institutions producing
+                world-class graduates
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 1">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Academic Background.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Affordable Excellence</h3>
+              <p>
+                World-class education at a fraction of Western costs —
+                outstanding value for international students
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 2">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Training.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Booming Tech Industry</h3>
+              <p>
+                Bangalore, Hyderabad & Pune — live inside one of the world's
+                fastest-growing tech economies
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 3">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Learn More.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>English Medium Education</h3>
+              <p>
+                English widely spoken in academia and industry — no language
+                barrier for international students
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 4">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/history.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>5,000 Years of Heritage</h3>
+              <p>
+                Ancient culture, diverse landscapes & spiritual traditions — a
+                transformative life experience
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-inner" style="--i: 5">
+              <div class="icon-box">
+                <lottie-player
+                  src="icons/Research.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 50px; height: 50px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <h3>Emerging Market Access</h3>
+              <p>
+                Understand one of the world's largest economies — 1.4 billion
+                people, limitless opportunity
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="country-section light">
+      <h2>Popular Courses</h2>
+
+      <div class="cards">
+        <!-- 1 IT & Computer Science -->
+        <input type="radio" id="radio-1" name="radio-card" checked />
+        <article class="card" style="--angle: 4deg">
+          <img
+            class="card-img"
+            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80"
+          />
+          <div class="card-data">
+            <h2>Information Technology & Computer Science</h2>
+            <p>
+              India's IITs and NITs are globally renowned for producing top-tier
+              tech talent that powers leading companies worldwide. With
+              Bangalore — India's Silicon Valley — on your doorstep, students
+              gain unmatched industry exposure, internship opportunities, and
+              access to a thriving startup ecosystem that is second to none in
+              Asia.
+            </p>
+            <footer>
+              <label for="radio-5">&#10094;</label>
+              <label for="radio-2">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 2 Management & MBA -->
+        <input type="radio" id="radio-2" name="radio-card" />
+        <article class="card" style="--angle: -8deg">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Management & MBA</h2>
+            <p>
+              India's IIMs are widely regarded as rivals to the world's top
+              international business schools, producing leaders who run global
+              corporations and shape policy. An MBA from IIM Ahmedabad,
+              Bangalore, or Calcutta carries immense prestige, with consistently
+              exceptional graduate placement records across finance, consulting,
+              and entrepreneurship.
+            </p>
+            <footer>
+              <label for="radio-1">&#10094;</label>
+              <label for="radio-3">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 3 Medicine & Healthcare -->
+        <input type="radio" id="radio-3" name="radio-card" />
+        <article class="card" style="--angle: -6deg">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Medicine & Healthcare</h2>
+            <p>
+              AIIMS (All India Institute of Medical Sciences) and India's
+              leading medical colleges offer high-quality medical education at
+              costs far below Western equivalents. India's vast and diverse
+              patient population provides clinical exposure that is virtually
+              unmatched anywhere in the world, preparing graduates for global
+              medical careers.
+            </p>
+            <footer>
+              <label for="radio-2">&#10094;</label>
+              <label for="radio-4">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 4 Engineering -->
+        <input type="radio" id="radio-4" name="radio-card" />
+        <article class="card" style="--angle: 10deg">
+          <img
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Engineering</h2>
+            <p>
+              Mechanical, electrical, and civil engineering programmes at
+              India's top institutions maintain strong industry partnerships
+              with both domestic giants and multinational corporations.
+              Graduates from IITs and NITs are sought after globally, with a
+              reputation for rigorous training, problem-solving excellence, and
+              adaptability across complex engineering environments.
+            </p>
+            <footer>
+              <label for="radio-3">&#10094;</label>
+              <label for="radio-5">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+
+        <!-- 5 Yoga, Ayurveda & Traditional Medicine -->
+        <input type="radio" id="radio-5" name="radio-card" />
+        <article class="card" style="--angle: 15deg">
+          <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80"
+            class="card-img"
+          />
+          <div class="card-data">
+            <h2>Yoga, Ayurveda & Traditional Medicine</h2>
+            <p>
+              Learn ancient wellness practices at their very source. India
+              offers immersive programmes in Yoga, Ayurveda, and traditional
+              medicine at institutions in Rishikesh, Kerala, and Pune. These
+              qualifications are gaining global recognition as the world
+              embraces holistic and integrative approaches to health and
+              well-being.
+            </p>
+            <footer>
+              <label for="radio-4">&#10094;</label>
+              <label for="radio-1">&#10095;</label>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cost-section">
+      <h2 class="section-title">Cost & Scholarships</h2>
+
+      <div class="cost-highlight">
+        <div class="cost-box">
+          <h3>Tuition Fees</h3>
+          <p>₹1,00,000 – ₹5,00,000 / year</p>
+        </div>
+        <div class="cost-box">
+          <h3>Living Costs</h3>
+          <p>₹3,00,000 – ₹6,00,000 / year</p>
+        </div>
+      </div>
+
+      <div class="country-cost-grid">
+        <div class="country-cost-card">
+          <h4>ICCR Scholarship 🇮🇳</h4>
+          <p>
+            Indian Council for Cultural Relations — full scholarships for
+            international students across disciplines
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>Study in India Program 🎓</h4>
+          <p>
+            Government of India initiative offering fee waivers and support for
+            top international applicants
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>University Merit Awards 🏛</h4>
+          <p>
+            Institution-specific scholarships at IITs, IIMs, and leading
+            universities for outstanding students
+          </p>
+        </div>
+
+        <div class="country-cost-card">
+          <h4>State Government Grants 🌏</h4>
+          <p>
+            Various Indian state governments offer additional financial support
+            to eligible international students
+          </p>
+        </div>
+      </div>
+
+      <div class="scholarships">
+        <h3>Scholarships Available</h3>
+        <div class="scholarship-list">
+          <span>ICCR Scholarship</span>
+          <span>Study in India Program</span>
+          <span>University Merit Awards</span>
+          <span>State Government Grants</span>
+          <span>Institute Fee Waivers</span>
+          <span>Private Foundation Support</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="visa-section-alt">
+      <h2 class="section-title">Visa Overview</h2>
+
+      <p class="visa-intro">
+        The Indian Student Visa (S Visa) allows international students to study
+        full-time at recognised Indian institutions. The application is
+        straightforward and managed through Indian embassies and consulates
+        worldwide, with a well-established process for both short-term and
+        long-duration study programmes.
+      </p>
+
+      <div class="visa-timeline">
+        <div class="step">
+          <span>01</span>
+          <h4>Secure Admission</h4>
+          <p>
+            Receive your official offer letter from a recognised Indian
+            institution
+          </p>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <h4>Prepare Documents</h4>
+          <p>
+            Offer letter, financial proof, academic transcripts, passport &
+            passport-size photos
+          </p>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <h4>Apply at Embassy</h4>
+          <p>
+            Submit your Student Visa (S Visa) application at the Indian Embassy
+            or Consulate
+          </p>
+        </div>
+
+        <div class="step">
+          <span>04</span>
+          <h4>Arrive in India</h4>
+          <p>
+            Register with the Foreigners Regional Registration Office (FRRO)
+            within 14 days
+          </p>
+        </div>
+      </div>
+
+      <div class="visa-info-strip">
+        <div>
+          💰 <strong>Funds:</strong> Proof of sufficient financial support for
+          tuition & living costs
+        </div>
+        <div>
+          🗣 <strong>English:</strong> Widely spoken — no separate language test
+          required for most programs
+        </div>
+        <div>
+          🏥 <strong>Insurance:</strong> Health insurance strongly recommended
+          for the duration of study
+        </div>
+      </div>
+
+      <div class="post-study">
+        <h3>After Graduation</h3>
+
+        <div class="post-bar">
+          <div class="post-pill">
+            <span class="country">Employment Visa</span>
+            <span class="info"
+              >Work in India's booming tech and business sectors
+              post-graduation</span
+            >
+          </div>
+
+          <div class="post-pill">
+            <span class="country">Startup India</span>
+            <span class="info"
+              >Launch your venture within one of the world's largest startup
+              ecosystems</span
+            >
+          </div>
+
+          <div class="post-pill">
+            <span class="country">Global Career</span>
+            <span class="info"
+              >IIT & IIM credentials open doors to top employers worldwide</span
+            >
+          </div>
+
+          <div class="post-pill highlight">
+            <span class="country">Long-Term Visa</span>
+            <span class="info"
+              >Extended stay options for professionals contributing to India's
+              growth sectors</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="who-section">
+      <h2>Who Should Choose India</h2>
+
+      <p class="who-intro">
+        Discover if India aligns with your goals, ambitions, and lifestyle.
+      </p>
+
+      <div class="who-tags">
+        <div class="tag">Budget-Conscious Quality Seekers</div>
+        <div class="tag">Aspiring Tech & IT Professionals</div>
+        <div class="tag">Future Business Leaders</div>
+        <div class="tag">Medical & Healthcare Aspirants</div>
+        <div class="tag">Yoga & Holistic Wellness Students</div>
+        <div class="tag">Emerging Market Enthusiasts</div>
+        <div class="tag">Cultural Immersion Seekers</div>
+        <div class="tag">Adventurous Global Learners</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <h2>Begin Your Indian Education Journey</h2>
+        <p>
+          Whether you are a student, parent, or institutional partner, we invite
+          you to connect with us and explore pathways aligned with your
+          aspirations.
+        </p>
+        <div class="cta-buttons">
+          <button
+            class="cta-btn primary"
+            onclick="window.open('contact.html', '_blank')"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="footer-bg"></div>
+
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>IISCHOLAR</h3>
+          <p>
+            Global Education Guided by Research & Ethics. <br />
+            Supporting students with responsible and transparent international
+            education pathways.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="collaborations.html">Collaborations</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="contact.html" target="_blank">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/1EWXGP1pPR/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="social-text">
+            Stay connected for updates, admissions & scholarships.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 IISCHOLAR All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const destDropdown = document.querySelector(".dropdown");
+        const destToggle = document.querySelector(".dropdown > a");
+
+        if (!hamburger || !navLinks) return;
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          navLinks.classList.toggle("open");
+        });
+
+        destToggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            destDropdown.classList.toggle("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

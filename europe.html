@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IISCHOLAR</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="europe.css"/>
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Flag Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css"
+  />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+<header>
+  <nav class="navbar">
+
+    <!-- Logo + Brand -->
+    <div class="nav-left">
+      <img src="logo.png" alt="logo" class="nav-logo" />
+      <span class="brand">IISCHOLAR</span>
+    </div>
+
+    <!-- Hamburger (outside nav-left) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+
+      <!-- DROPDOWN -->
+      <li class="dropdown">
+        <a href="#">Destinations ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="europe.html" target="_blank">Europe</a></li>
+          <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+          <li><a href="canada.html" target="_blank">Canada</a></li>
+          <li><a href="australia.html" target="_blank">Australia</a></li>
+          <li><a href="japan.html" target="_blank">Japan</a></li>
+          <li><a href="india.html" target="_blank">India</a></li>
+        </ul>
+      </li>
+
+      <li><a href="services.html" target="_blank">Services</a></li>
+      <li><a href="collaborations.html" target="_blank">Collaborations</a></li>
+      <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+      <li><a href="events.html" target="_blank">Events</a></li>
+
+      <!-- Mobile-only Book Session (last item) -->
+      <li class="mobile-cta">
+        <div class="cta-wrapper">
+          <button class="nav-btn" onclick="window.open('https://forms.gle/C7TUafRa4tg1occq6','_blank')">Book Session</button>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Desktop CTA -->
+    <div class="nav-right">
+      <div class="cta-wrapper">
+        <span class="pointer">👉</span>
+        <button class="nav-btn" onclick="window.open('https://forms.gle/C7TUafRa4tg1occq6','_blank')">
+          Book Session
+        </button>
+      </div>
+    </div>
+
+  </nav>
+</header>
+
+  <!-- HERO SECTION -->
+  <section class="europe-hero"
+  style="
+    background: 
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  "
+>
+
+  <div class="hero-overlay">
+    <div class="hero-content">
+
+      <h1>Study in Europe</h1>
+
+      <p class="subheading">
+        World-Class Education with Affordable Opportunities
+      </p>
+
+      <p class="tagline">
+        Explore 27+ Countries • Low or No Tuition Fees • Globally Recognized Degrees
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn primary" onclick="window.open('services.html', '_blank')">
+          Explore Programs
+        </button>          
+        <button class="btn secondary" onclick="window.open('https://forms.gle/C7TUafRa4tg1occq6','_blank')">
+          Book Counselling
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-down">↓</div>
+
+</section>
+  <section class="country-section">
+  <div class="container">
+
+    <h2>Why Study in Europe</h2>
+
+    <p class="section-desc">
+     Europe offers incredible diversity - study in Germany's engineering powerhouses, Netherlands' international programs, France's prestigious institutions, or Scandinavia's innovative universities. The Bologna Process ensures degree recognition across Europe, and the Schengen Area allows easy travel.
+    </p>
+
+    <!-- FAN CONTAINER -->
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="card-inner" style="--i:0">
+          <div class="icon-box">
+            <lottie-player
+    src="icons/globe.json"
+    background="transparent"
+    speed="1"
+    style="width:50px;height:50px"
+    loop
+    autoplay>
+          </div>
+          <h3>27+ Countries Access</h3>
+          <p>Schengen mobility across Europe</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-inner" style="--i:1">
+          <div class="icon-box">
+            <lottie-player
+    src="icons/Academic Background.json"
+    background="transparent"
+    speed="1"
+    style="width:50px;height:50px"
+    loop
+    autoplay>
+          </div>
+          <h3>Recognized Degrees</h3>
+          <p>Globally accepted qualifications</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-inner" style="--i:2">
+          <div class="icon-box">
+            <lottie-player
+    src="icons/Training.json"
+    background="transparent"
+    speed="1"
+    style="width:50px;height:50px"
+    loop
+    autoplay>
+          </div>
+          <h3>Affordable Education</h3>
+          <p>Low or zero tuition fees</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-inner" style="--i:3">
+          <div class="icon-box">
+            <lottie-player
+    src="icons/Learn More.json"
+    background="transparent"
+    speed="1"
+    style="width:50px;height:50px"
+    loop
+    autoplay>
+          </div>
+          <h3>English Programs</h3>
+          <p>Wide range of English courses</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-inner" style="--i:4">
+          <div class="icon-box">
+            <lottie-player
+    src="icons/history.json"
+    background="transparent"
+    speed="1"
+    style="width:50px;height:50px"
+    loop
+    autoplay>
+  </lottie-player>
+          </div>
+          <h3>Rich Culture</h3>
+          <p>History, art & diversity</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-inner" style="--i:5">
+          <div class="icon-box">
+  <lottie-player
+    src="icons/Research.json"
+    background="transparent"
+    speed="1"
+    style="width:50px;height:50px"
+    loop
+    autoplay>
+  </lottie-player>
+          </div>
+          <h3>Research Focus</h3>
+          <p>Innovation & critical thinking</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="country-section light">
+  <h2>Popular Courses</h2>
+
+  <div class="cards">
+
+    <!-- 1 Engineering -->
+    <input type="radio" id="radio-1" name="radio-card" checked>
+    <article class="card" style="--angle:4deg">
+       <img class="card-img" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
+
+
+      <div class="card-data">
+        <h2>Engineering</h2>
+        <p>Top universities like TU Munich & RWTH Aachen offer world-class engineering programs with strong industry integration. Students gain hands-on experience through cutting-edge labs, internships with global companies, and exposure to advanced research in fields like automotive, robotics, and AI.</p>
+        <footer>
+          <label for="radio-5">&#10094;</label>
+          <label for="radio-2">&#10095;</label>
+        </footer>
+      </div>
+    </article>
+
+    <!-- 2 Business -->
+    <input type="radio" id="radio-2" name="radio-card">
+    <article class="card" style="--angle:-8deg">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" class="card-img">
+
+      <div class="card-data">
+        <h2>Business & Economics</h2>
+        <p>Study at globally recognized institutions like INSEAD, HEC Paris, and Rotterdam School of Management. These programs focus on leadership, global markets, and real-world business challenges, offering strong industry connections and international exposu</p>
+        <footer>
+          <label for="radio-1">&#10094;</label>
+          <label for="radio-3">&#10095;</label>
+        </footer>
+      </div>
+    </article>
+
+    <!-- 3 Design -->
+    <input type="radio" id="radio-3" name="radio-card">
+    <article class="card" style="--angle:-6deg">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="card-img">
+       <div class="card-data">
+        <h2>Design & Architecture</h2>
+        <p>Italy and Spain combine rich artistic heritage with modern design innovation. Students learn from centuries of architectural excellence while exploring contemporary trends in fashion, interior, and urban design.</p>
+        <footer>
+          <label for="radio-2">&#10094;</label>
+          <label for="radio-4">&#10095;</label>
+        </footer>
+      </div>
+    </article>
+
+    <!-- 4 Sustainable -->
+    <input type="radio" id="radio-4" name="radio-card">
+    <article class="card" style="--angle:10deg">
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" class="card-img">
+
+      <div class="card-data">
+        <h2>Sustainable Development</h2>
+        <p>Scandinavia leads in sustainability, green technology, and social innovation. Programs focus on climate solutions, renewable energy, and sustainable urban development with real-world applications.</p>
+        <footer>
+          <label for="radio-3">&#10094;</label>
+          <label for="radio-5">&#10095;</label>
+        </footer>
+      </div>
+    </article>
+
+    <!-- 5 IR -->
+    <input type="radio" id="radio-5" name="radio-card">
+    <article class="card" style="--angle:15deg">
+      <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620" class="card-img">
+
+      <div class="card-data">
+        <h2>International Relations</h2>
+        <p>Belgium and Switzerland provide unique access to global institutions like the EU and UN. Students gain firsthand exposure to international diplomacy, policy-making, and global governance.</p>
+        <footer>
+          <label for="radio-4">&#10094;</label>
+          <label for="radio-1">&#10095;</label>
+        </footer>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="cost-section">
+
+  <h2 class="section-title">Cost & Scholarships</h2>
+
+  <!-- COST HIGHLIGHT -->
+  <div class="cost-highlight">
+    <div class="cost-box">
+      <h3>Tuition Fees</h3>
+      <p>€0 – €20,000 / year</p>
+    </div>
+
+    <div class="cost-box">
+      <h3>Living Costs</h3>
+      <p>€800 – €1,500 / month</p>
+    </div>
+  </div>
+
+  <!-- COUNTRY CARDS -->
+  <div class="country-cost-grid">
+
+    <div class="country-cost-card">
+      <h4>Germany 🇩🇪</h4>
+      <p>Free at public universities (minimal semester fees)</p>
+    </div>
+
+    <div class="country-cost-card">
+      <h4>Norway 🇳🇴</h4>
+      <p>Free education for all students</p>
+    </div>
+
+    <div class="country-cost-card">
+      <h4>France 🇫🇷</h4>
+      <p>€2,770 – €3,770 per year</p>
+    </div>
+
+    <div class="country-cost-card">
+      <h4>Netherlands 🇳🇱</h4>
+      <p>€8,000 – €15,000 per year</p>
+    </div>
+
+  </div>
+
+  <!-- SCHOLARSHIPS -->
+  <div class="scholarships">
+    <h3>Scholarships Available</h3>
+
+    <div class="scholarship-list">
+      <span>Erasmus+</span>
+      <span>DAAD</span>
+      <span>Eiffel Excellence</span>
+      <span>Holland Scholarship</span>
+      <span>Swedish Institute</span>
+      <span>Govt. Scholarships</span>
+    </div>
+  </div>
+
+</section>
+<section class="visa-section-alt">
+
+  <h2 class="section-title">Visa Overview</h2>
+
+  <!-- SHORT INTRO -->
+  <p class="visa-intro">
+    The Schengen Student Visa allows you to study across most European countries for over 90 days, 
+    with a streamlined and student-friendly application process.
+  </p>
+
+  <!-- TIMELINE -->
+  <div class="visa-timeline">
+
+    <div class="step">
+      <span>01</span>
+      <h4>Get Admission</h4>
+      <p>Receive offer letter from university</p>
+    </div>
+
+    <div class="step">
+      <span>02</span>
+      <h4>Prepare Documents</h4>
+      <p>Financial proof, insurance, accommodation</p>
+    </div>
+
+    <div class="step">
+      <span>03</span>
+      <h4>Apply Visa</h4>
+      <p>Submit application & biometrics</p>
+    </div>
+
+    <div class="step">
+      <span>04</span>
+      <h4>Fly to Europe</h4>
+      <p>Start your academic journey</p>
+    </div>
+
+  </div>
+
+  <!-- INFO STRIP -->
+  <div class="visa-info-strip">
+    <div>💰 <strong>Funds:</strong> €10,000–€12,000/year</div>
+    <div>🛡 <strong>Insurance:</strong> Mandatory</div>
+    <div>🏠 <strong>Accommodation:</strong> Required proof</div>
+  </div>
+
+  <!-- POST STUDY -->
+  <div class="post-study">
+
+  <h3>After Graduation</h3>
+
+  <div class="post-bar">
+
+    <div class="post-pill">
+      <span class="country">Germany</span>
+      <span class="info">18-month job-seeking visa</span>
+    </div>
+
+    <div class="post-pill">
+      <span class="country">Netherlands</span>
+      <span class="info">1-year orientation visa</span>
+    </div>
+
+    <div class="post-pill">
+      <span class="country">France</span>
+      <span class="info">Temporary residence permit</span>
+    </div>
+
+    <div class="post-pill highlight">
+      <span class="country">EU Blue Card</span>
+      <span class="info">Work pathway for skilled professionals</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+</section>
+<section class="who-section">
+
+  <h2>Who Should Choose Europe</h2>
+
+  <p class="who-intro">
+    Discover if Europe aligns with your goals, ambitions, and lifestyle.
+  </p>
+
+  <div class="who-tags">
+
+    <div class="tag">Affordable Education Seekers</div>
+    <div class="tag">Culturally Curious Minds</div>
+    <div class="tag">Future Engineers & Innovators</div>
+    <div class="tag">Business & Luxury Aspirants</div>
+    <div class="tag">Language Learners</div>
+    <div class="tag">Travel Enthusiasts</div>
+    <div class="tag">Work-Life Balance Seekers</div>
+    <div class="tag">Global Career Builders</div>
+
+  </div>
+
+</section>
+<section class="cta">
+
+  <div class="cta-content">
+
+    <h2>Begin Your Global Education Journey</h2>
+
+    <p>
+      Whether you are a student, parent, or institutional partner,
+      we invite you to connect with us and explore pathways aligned with your aspirations.
+    </p>
+
+    <div class="cta-buttons">
+      <button class="cta-btn primary" onclick="window.open('contact.html', '_blank')">
+  Contact Us
+</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<footer class="footer" id="footer">
+
+  <div class="footer-bg"></div>
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>IISCHOLAR</h3>
+      <p>
+        Global Education Guided by Research & Ethics. </br> 
+        Supporting students with responsible and transparent international education pathways.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        
+        <li><a href="#about">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collaborations.html">Collaborations</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="contact.html" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Social</h4>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1EWXGP1pPR/" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg==" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-linkedin-in"></i>
+</a>
+      </div>
+
+      <p class="social-text">
+        Stay connected for updates, admissions & scholarships.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026  IISCHOLAR All rights reserved.</p>
+  </div>
+
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  const destDropdown = document.querySelector('.dropdown');
+  const destToggle = document.querySelector('.dropdown > a');
+
+  if (!hamburger || !navLinks) return;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+
+  destToggle.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      destDropdown.classList.toggle('open');
+    }
+  });
+});
+</script>
+  </body>
+  </html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IISCHOLAR</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Flag Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css"
+  />
+</head>
+
+<body>
+
+ <!-- Navbar -->
+<header>
+  <nav class="navbar">
+
+    <!-- Logo + Brand -->
+    <div class="nav-left">
+      <img src="logo.png" alt="logo" class="nav-logo" />
+      <span class="brand">IISCHOLAR</span>
+    </div>
+
+    <!-- Hamburger (outside nav-left) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+
+      <!-- DROPDOWN -->
+      <li class="dropdown">
+        <a href="#">Destinations ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="europe.html" target="_blank">Europe</a></li>
+          <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+          <li><a href="canada.html" target="_blank">Canada</a></li>
+          <li><a href="australia.html" target="_blank">Australia</a></li>
+          <li><a href="japan.html" target="_blank">Japan</a></li>
+          <li><a href="india.html" target="_blank">India</a></li>
+        </ul>
+      </li>
+
+      <li><a href="services.html" target="_blank">Services</a></li>
+      <li><a href="collaborations.html" target="_blank">Collaborations</a></li>
+      <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+      <li><a href="events.html" target="_blank">Events</a></li>
+
+      <!-- Mobile-only Book Session (last item) -->
+      <li class="mobile-cta">
+        <div class="cta-wrapper">
+          <button class="nav-btn" onclick="window.open('https://forms.gle/C7TUafRa4tg1occq6','_blank')">Book Session</button>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Desktop CTA -->
+    <div class="nav-right">
+      <div class="cta-wrapper">
+        <span class="pointer">👉</span>
+        <button class="nav-btn" onclick="window.open('https://forms.gle/C7TUafRa4tg1occq6','_blank')">
+          Book Session
+        </button>
+      </div>
+    </div>
+
+  </nav>
+</header>
+  <section class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <h1 class="main-tagline slide-left">
+      Helping You Navigate the World of Global Education
+    </h1>
+
+    <p class="sub-tagline animate-tagline">
+      Learn Globally. Lead Responsibly
+    </p>
+
+    <div class="cta-buttons slide-right">
+      <button class="btn primary" 
+onclick="window.open('https://forms.gle/C7TUafRa4tg1occq6','_blank')">
+Book Counselling
+</button>
+      <a href="services.html"target="_blank" class="btn secondary">Explore Services</a>
+      <a href="contact.html" target="_blank"class="btn outline">Contact</a>
+    
+
+    </div>
+
+  </div>
+
+
+</section>
+
+<section class="ticker">
+
+  <div class="ticker-wrapper">
+
+    <div class="ticker-content">
+
+      <span>Global Education</span>
+      <span>Study Abroad</span>
+      <span>Academic Mentorship</span>
+      <span>Ethical Guidance</span>
+      <span>International Opportunities</span>
+      <span>Career Growth</span>
+      <span>Research-Based Pathways</span>
+
+      <!-- duplicate for smooth infinite loop -->
+      <span>Global Education</span>
+      <span>Study Abroad</span>
+      <span>Academic Mentorship</span>
+      <span>Ethical Guidance</span>
+      <span>International Opportunities</span>
+      <span>Career Growth</span>
+      <span>Research-Based Pathways</span>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="about" id = "about">
+  <div class="about-container">
+
+    <!-- Left Content -->
+    <div class="about-text">
+      <h2>About IISCHOLAR</h2>
+
+      <p class="about-highlight">
+        Empowering students to access world-class global education through <br>
+        <span id="typewriter-dynamic"></span>
+      </p>
+
+      <p>
+        At <strong>IISCHOLAR</strong>, we believe studying abroad is more than earning a degree —
+        it’s about <span>experiencing the world, building perspective, and shaping a meaningful future</span>.
+      </p>
+
+      <p>
+        Our approach combines <span>policy awareness, expert mentoring, and student-first guidance</span>
+        to help you make confident decisions at every step of your journey.
+      </p>
+    </div>
+
+    <!-- Right Image -->
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="students">
+    </div>
+
+  </div>
+</section>
+</section>
+<!-- STATS — separate section -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <div class="stat-block">
+      <span class="stat-num" data-target="5000" data-suffix="+" data-display="K">0</span>
+      <span class="stat-label">Students Mentored</span>
+      <div class="stat-bar"></div>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num" data-target="15" data-suffix="+">0</span>
+      <span class="stat-label">Countries Placed</span>
+      <div class="stat-bar"></div>
+    </div>
+    
+    <div class="stat-block">
+      <span class="stat-num" data-target="17" data-suffix="+">0</span>
+      <span class="stat-label">Universities Partnered</span>
+      <div class="stat-bar"></div>
+    </div>
+
+    <div class="stat-block">
+      <span class="stat-num" data-target="10" data-suffix="+">0</span>
+      <span class="stat-label">Collaborations</span>
+      <div class="stat-bar"></div>
+    </div>
+
+    <div class="stat-block">
+  <span class="stat-num" data-target="10000000" data-display="M">0</span>
+  <span class="stat-label">Scholarships Secured</span>
+  <div class="stat-bar"></div>
+</div>
+
+  </div>
+</section>
+<section class="programs">
+  <h2>Program Overview</h2>
+<div class="pset">
+  <div class="container">
+    <div class="row listar-feature-items">
+
+      <!-- 01 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <div class="listar-feature-item-inner">
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img class="listar-image-icon" src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper">
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>01</span> Undergraduate Profile Development</span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Build a strong academic and extracurricular<br> foundation for global universities.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <div class="listar-feature-item-inner">
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img class="listar-image-icon" src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper">
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>02</span> University Application Guidance</span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  End-to-end support for applications, SOPs, and <br>documentation.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <div class="listar-feature-item-inner">
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img class="listar-image-icon" src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper">
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>03</span> PhD / Masters Profile Building</span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Research-focused mentoring for advanced<br> academic pathways.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <div class="listar-feature-item-inner">
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img class="listar-image-icon" src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper">
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>04</span> Scholarship Strategies</span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Maximize funding opportunities with strategic<br> planning.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <div class="listar-feature-item-inner">
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img class="listar-image-icon" src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper">
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>05</span> Research Mentorship</span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Work with experts to develop impactful research<br> profiles.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <div class="listar-feature-item-inner">
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img class="listar-image-icon" src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper">
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>06</span> Sustainability Opportunities</span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Explore global programs aligned with <br>sustainability goals.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+  </section>
+   </section>
+  
+  <section class="country-section unique" id="uniqueSection">
+  <div class="container">
+
+    <h2>What Makes Us Unique</h2>
+
+    <div class="features-grid">
+
+      <!-- 1 -->
+      <div class="feature-card">
+        <div class="card-inner" style="--i:0">
+          <div class="icon-box">
+            <lottie-player src="icons/research.json" background="transparent" speed="1"
+              style="width:50px;height:50px" loop autoplay>
+            </lottie-player>
+          </div>
+          <h3>Research-informed guidance</h3>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="feature-card">
+        <div class="card-inner" style="--i:1">
+          <div class="icon-box">
+            <lottie-player src="icons/Work Ethic.json" background="transparent" speed="1"
+              style="width:50px;height:50px" loop autoplay>
+            </lottie-player>
+          </div>
+          <h3>Ethical counselling</h3>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="feature-card">
+        <div class="card-inner" style="--i:2">
+          <div class="icon-box">
+            <lottie-player src="icons/Academic Background.json" background="transparent" speed="1"
+              style="width:50px;height:50px" loop autoplay>
+            </lottie-player>
+          </div>
+          <h3>Academic alignment</h3>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="feature-card">
+        <div class="card-inner" style="--i:3">
+          <div class="icon-box">
+            <lottie-player src="icons/Training.json" background="transparent" speed="1"
+              style="width:50px;height:50px" loop autoplay>
+            </lottie-player>
+          </div>
+          <h3>Mentorship beyond admission</h3>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="feature-card">
+        <div class="card-inner" style="--i:4">
+          <div class="icon-box">
+            <lottie-player src="icons/Business Woman.json" background="transparent" speed="1"
+              style="width:50px;height:50px" loop autoplay>
+            </lottie-player>
+          </div>
+          <h3>Personalized student guidance</h3>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="feature-card">
+        <div class="card-inner" style="--i:5">
+          <div class="icon-box">
+            <lottie-player src="icons/Learn More.json" background="transparent" speed="1"
+              style="width:50px;height:50px" loop autoplay>
+            </lottie-player>
+          </div>
+          <h3>Career-oriented planning</h3>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="feature-card">
+        <div class="card-inner" style="--i:6">
+          <div class="icon-box">
+            <lottie-player src="icons/Sales Consultant.json" background="transparent" speed="1"
+              style="width:50px;height:50px" loop autoplay>
+            </lottie-player>
+          </div>
+          <h3>Skill-based mentoring</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="partners">
+  <div class="container">
+    <h2>From Aspiration to Admission</h2>
+    <h3>2025-2026</h3>
+
+    <div class="logo-grid">
+      <!-- Row 1 -->
+      <div class="logo-item"><img src="logo/images (6).png" alt=""></div>
+      <div class="logo-item"><img src="logo/6053d56883808363e0131377289f5548.jpg" alt=""></div>
+      <div class="logo-item"><img src="logo/UCL-logo.jpg" alt=""></div>
+      <div class="logo-item"><img src="logo/Duke_University_logo.svg.png" alt=""></div>
+      <div class="logo-item"><img src="logo/images (1).png" alt=""></div>
+
+      <!-- Row 2 -->
+      <div class="logo-item"><img src="logo/images (2).png" alt=""></div>
+      <div class="logo-item"><img src="logo/images (3).png" alt=""></div>
+      <div class="logo-item"><img src="logo/images (4).png" alt=""></div>
+      <div class="logo-item"><img src="logo/images (5).png" alt=""></div>
+      <div class="logo-item"><img src="logo/images (8).png" alt=""></div>
+      
+
+      <!-- Row 3 -->
+      <div class="logo-item"><img src="logo/images (7).png" alt=""></div>
+      <div class="logo-item"><img src="logo/LSE_Logo.svg.png" alt=""></div>
+      <div class="logo-item"><img src="logo/Seal_of_the_University_of_California,_San_Diego.svg.png" alt=""></div>
+      <div class="logo-item"><img src="logo/TrinityCD.png" alt=""></div>
+      <div class="logo-item"><img src="logo/university-of-warwick-warw7046.jpg" alt=""></div>
+
+      <!-- Row 4 -->
+       <div class="logo-item"><img src="logo/Johns-Hopkins-University-Logo-Vector.png" alt=""></div>
+             <div class="logo-item"><img src="logo/University_of_Pittsburgh_seal.svg" alt=""></div>
+             <div class="logo-item"><img src="" alt=""></div>
+             <div class="logo-item"><img src="" alt=""></div>
+             <div class="logo-item"><img src="" alt=""></div>
+
+      
+    </div>
+  </div>
+</section>
+  
+
+<!-- INTRO SECTION -->
+<section class="founder-intro">
+
+  <div class="founder-intro-container">
+
+    <p class="intro-badge">IISCHOLAR</p>
+
+    <h2>
+      Founded by an Award-Recognized Global Education Professional
+    </h2>
+
+    <p>
+      IISCHOLAR is founded and led by an award-recognized academic and global education professional
+      with experience in STEM, climate resilience, public policy, design, life sciences, and international research collaboration.
+    </p>
+
+    <p>
+      This ensures students receive mentorship grounded in scholarship, ethics, and global perspective — not just procedural guidance.
+    </p>
+
+<button onclick="window.location.href='founder.html' "target="_blank" class="primary-btn">
+  Meet The Founder
+</button>
+  </div>
+
+</section>
+<section>
+  <div class="testimonials">Testimonials</div>
+</section>
+
+<section class="cta">
+
+  <div class="cta-content">
+
+    <h2>Begin Your Global Education Journey</h2>
+
+    <p>
+      Whether you are a student, parent, or institutional partner,
+      we invite you to connect with us and explore pathways aligned with your aspirations.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="contact.html" target="_blank" class="cta-btn primary">
+  Contact Us
+</a>
+     <button class="cta-btn primary" onclick="openNewsletterModal()">
+  Join Newsletter
+</button>
+<div id="newsletterModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeNewsletterModal()">&times;</span>
+
+<div id="formBox">
+
+<form id="newsletterForm"
+action="https://formsubmit.co/iispprstudyabroad@gmail.com"
+method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Newsletter Subscription">
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required>
+
+<button type="submit" class="cta-btn primary">
+Submit
+</button>
+
+</form>
+
+</div>
+
+<div id="thankYouBox" style="display:none;">
+<p style="font-size:22px; text-align:center;">
+Thank you for subscribing.
+</p>
+</div>
+
+</div>
+</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<footer class="footer" id="footer">
+
+  <div class="footer-bg"></div>
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>IISCHOLAR</h3>
+      <p>
+        Global Education Guided by Research & Ethics. </br> 
+        Supporting students with responsible and transparent international education pathways.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        
+        <li><a href="#about">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collaborations.html">Collaborations</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="contact.html" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Social</h4>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1EWXGP1pPR/" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg==" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-linkedin-in"></i>
+</a>
+      </div>
+
+      <p class="social-text">
+        Stay connected for updates, admissions & scholarships.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026  IISCHOLAR All rights reserved.</p>
+  </div>
+
+</footer>
+
+  <!-- Script -->
+  <script src="scripts.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</body>
+
+</html>

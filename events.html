@@ -1,0 +1,1297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming Events — Study Abroad</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #08172e;
+        --navy-mid: #0e2445;
+        --navy-light: #162e56;
+        --gold: #c89b3c;
+        --gold-light: #e0b84f;
+        --gold-pale: rgba(200, 155, 60, 0.12);
+        --gold-line: rgba(200, 155, 60, 0.28);
+        --white: #ffffff;
+        --off-white: #f0ead8;
+        --muted: rgba(240, 234, 216, 0.55);
+        --card-bg: #0c1f3a;
+        --radius: 16px;
+        --transition: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+
+        background: var(--navy);
+        color: var(--off-white);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+/* =============================================================================
+   CSS VARIABLES (Navbar-relevant only)
+============================================================================= */
+
+:root {
+  --color-primary:   #0d2b4d;
+  --color-gold:      #c89b3c;
+  --color-gold-dark: #a67c2f;
+  --color-white:     #ffffff;
+  --transition-base: 0.3s ease;
+}
+
+
+/* =============================================================================
+   NAVBAR
+============================================================================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: var(--color-white);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand {
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Nav Links
+----------------------------------------------------------------------------- */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 5px 0;
+  transition: all var(--transition-base);
+}
+
+/* Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-dark));
+  transition: all var(--transition-base);
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* -----------------------------------------------------------------------------
+   CTA Button
+----------------------------------------------------------------------------- */
+
+.cta-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pointer {
+  font-size: 20px;
+  animation: pointAnim 1.5s infinite;
+}
+
+@keyframes pointAnim {
+  0%,
+  100% { transform: translateX(0);   opacity: 0.7; }
+  50%  { transform: translateX(8px); opacity: 1;   }
+}
+
+.nav-btn {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%   { box-shadow: 0 0 0 0    rgba(200, 155, 60, 0.6); }
+  70%  { box-shadow: 0 0 0 15px rgba(200, 155, 60, 0);   }
+  100% { box-shadow: 0 0 0 0    rgba(200, 155, 60, 0);   }
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(200, 155, 60, 0.4);
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* -----------------------------------------------------------------------------
+   Dropdown
+----------------------------------------------------------------------------- */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  border-radius: 10px;
+  padding: 10px 0;
+  list-style: none;
+  min-width: 180px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  top: 140%;
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--color-primary);
+  font-size: 14px;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.dropdown-menu a:hover {
+  background: rgba(200, 155, 60, 0.1);
+  color: var(--color-gold);
+  padding-left: 25px;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Hamburger
+----------------------------------------------------------------------------- */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 3px;
+  transition: all var(--transition-base);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg);  }
+.hamburger.open span:nth-child(2) { opacity: 0;                                 }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile CTA — hidden by default, shown inside menu on mobile */
+.nav-links .mobile-cta {
+  display: none;
+}
+
+
+/* =============================================================================
+   RESPONSIVE — TABLET  (max-width: 1024px)
+============================================================================= */
+
+@media (max-width: 1024px) {
+  .navbar { padding: 10px 25px; }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — SMALL TABLET / LARGE MOBILE  (max-width: 900px)
+============================================================================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 10px 24px;
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    background: var(--color-white);
+    border-top: 1px solid #eee;
+    padding: 12px 0;
+    margin-top: 10px;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links li { width: 100%; }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  .nav-links a::after { display: none; }
+
+  .nav-links a:hover {
+    transform: none;
+    padding-left: 32px;
+    background: rgba(200, 155, 60, 0.06);
+  }
+
+  /* Dropdown becomes accordion on mobile */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 0 0 16px;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    min-width: unset;
+  }
+
+  .dropdown.open .dropdown-menu { display: block; }
+
+  .dropdown > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hide desktop CTA; show mobile CTA inside menu */
+  .nav-right { display: none; }
+
+  .nav-links .mobile-cta {
+    display: block;
+    padding: 16px 24px 8px;
+  }
+
+  .nav-links .mobile-cta .nav-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .nav-links .mobile-cta .pointer { display: none; }
+}
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        min-height: 52vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 24px 80px;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 70% 60% at 50% 0%,
+            rgba(200, 155, 60, 0.18) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 50% 40% at 20% 80%,
+            rgba(14, 36, 69, 0.9) 0%,
+            transparent 60%
+          ),
+          linear-gradient(160deg, #08172e 0%, #0e2445 50%, #081a35 100%);
+        z-index: 0;
+      }
+
+      /* Decorative grid lines */
+      .hero-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(200, 155, 60, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(200, 155, 60, 0.05) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(
+          ellipse 80% 80% at 50% 50%,
+          black 30%,
+          transparent 100%
+        );
+      }
+
+      /* Floating orbs */
+      .hero-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-orb-1 {
+        width: 340px;
+        height: 340px;
+        background: rgba(200, 155, 60, 0.09);
+        top: -80px;
+        left: -60px;
+        animation: floatOrb 8s ease-in-out infinite;
+      }
+      .hero-orb-2 {
+        width: 260px;
+        height: 260px;
+        background: rgba(22, 46, 86, 0.8);
+        bottom: -60px;
+        right: -40px;
+        animation: floatOrb 10s ease-in-out infinite reverse;
+      }
+      @keyframes floatOrb {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-28px) scale(1.05);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 22px;
+        font-weight: 500;
+      }
+      .hero-eyebrow::before,
+      .hero-eyebrow::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.6;
+      }
+
+      .hero-title {
+        font-family: Arial, sans-serif;
+
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.5px;
+        color: var(--white);
+        margin-bottom: 20px;
+      }
+      .hero-title span {
+        color: var(--gold);
+        font-style: italic;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+        color: var(--muted);
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 540px;
+        margin: 0 auto 36px;
+      }
+
+      .hero-divider {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 0 auto;
+      }
+
+      /* ─── EVENTS SECTION ─── */
+      .events-section {
+        padding: 80px 24px 100px;
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .section-label {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+      .section-label h2 {
+        font-family: Arial, sans-serif;
+
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 10px;
+      }
+      .section-label p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        font-weight: 300;
+      }
+
+      /* ─── GRID ─── */
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+      @media (max-width: 760px) {
+        .events-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ─── EVENT CARD ─── */
+      .event-card {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        border: 1px solid var(--gold-line);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition),
+          border-color var(--transition);
+        opacity: 0;
+        transform: translateY(32px);
+      }
+      .event-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease,
+          box-shadow var(--transition),
+          border-color var(--transition);
+      }
+      .event-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(200, 155, 60, 0.55);
+        box-shadow:
+          0 0 0 1px rgba(200, 155, 60, 0.2),
+          0 24px 60px rgba(0, 0, 0, 0.5),
+          0 0 40px rgba(200, 155, 60, 0.1);
+      }
+
+      /* Poster image */
+      .card-poster {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+        flex-shrink: 0;
+      }
+      .card-poster img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .event-card:hover .card-poster img {
+        transform: scale(1.05);
+      }
+
+      /* Poster placeholder (when no image) */
+      .card-poster-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+      .card-poster-placeholder .ph-icon {
+        font-size: 2.8rem;
+        opacity: 0.4;
+      }
+      .card-poster-placeholder .ph-label {
+        font-size: 0.7rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      /* Badge on image */
+      .card-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: var(--gold);
+        color: var(--navy);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 30px;
+      }
+
+      /* Gold gradient bottom edge on poster */
+      .card-poster::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: linear-gradient(to top, var(--card-bg), transparent);
+      }
+
+      /* Card body */
+      .card-body {
+        padding: 28px 28px 24px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 0;
+      }
+
+      .card-title {
+        font-family: Arial, sans-serif;
+
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.25;
+        margin-bottom: 10px;
+      }
+
+      .card-desc {
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 22px;
+      }
+
+      /* Meta row */
+      .card-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 26px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(200, 155, 60, 0.14);
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.82rem;
+        color: var(--off-white);
+        font-weight: 400;
+      }
+      .meta-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--gold-pale);
+        border: 1px solid var(--gold-line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+      }
+      .meta-label {
+        color: var(--muted);
+        font-size: 0.72rem;
+        display: block;
+      }
+      .meta-value {
+        color: var(--off-white);
+        font-weight: 500;
+      }
+
+      /* CTA Button */
+      .card-footer {
+        margin-top: auto;
+      }
+      .btn-register {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 14px 24px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--gold) 0%, #a87c28 100%);
+        color: var(--navy);
+        font-family: Arial, sans-serif;
+
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+      .btn-register::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+      .btn-register:hover::before {
+        left: 100%;
+      }
+      .btn-register:hover {
+        background: linear-gradient(
+          135deg,
+          var(--gold-light) 0%,
+          var(--gold) 100%
+        );
+        box-shadow: 0 6px 28px rgba(200, 155, 60, 0.4);
+        transform: translateY(-1px);
+      }
+      .btn-register:active {
+        transform: translateY(0);
+      }
+      .btn-arrow {
+        font-size: 1rem;
+        transition: transform 0.2s;
+      }
+      .btn-register:hover .btn-arrow {
+        transform: translateX(4px);
+      }
+
+      /* ─── FOOTER STRIP ─── */
+      .footer-strip {
+        text-align: center;
+        padding: 32px 24px 48px;
+        border-top: 1px solid rgba(200, 155, 60, 0.1);
+        font-size: 0.78rem;
+        color: var(--muted);
+        letter-spacing: 0.5px;
+      }
+      .footer-strip span {
+        color: var(--gold);
+      }
+
+      /* ─── SCROLL ANIMATIONS ─── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hero entrance animation */
+      .hero-content > * {
+        opacity: 0;
+        animation: heroReveal 0.8s ease forwards;
+      }
+      .hero-eyebrow {
+        animation-delay: 0.1s;
+      }
+      .hero-title {
+        animation-delay: 0.25s;
+      }
+      .hero-subtitle {
+        animation-delay: 0.4s;
+      }
+      .hero-divider {
+        animation-delay: 0.55s;
+      }
+
+      @keyframes heroReveal {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+.footer {
+  position: relative;
+  background: linear-gradient(135deg, #071a2e, #0D2B4D);
+  color: white;
+  padding: 80px 40px 20px;
+  overflow: hidden;
+}
+
+/* subtle world map background */
+.footer-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg");
+  background-size: cover;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* layout */
+.footer-container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+/* headings */
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.footer-col h4 {
+  color: #C89B3C;
+  margin-bottom: 15px;
+}
+
+/* text */
+.footer-col p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #C89B3C;
+  padding-left: 4px;
+}
+
+/* social icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background: #C89B3C;
+  color: #0D2B4D;
+  transform: translateY(-3px);
+}
+
+/* bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+  padding-top: 15px;
+  text-align: center;
+  color: #888;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <!-- Logo + Brand -->
+        <div class="nav-left">
+          <img src="logo.png" alt="logo" class="nav-logo" />
+          <span class="brand">IISCHOLAR</span>
+        </div>
+
+        <!-- Hamburger (outside nav-left) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+
+          <!-- DROPDOWN -->
+          <li class="dropdown">
+            <a href="#">Destinations ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="europe.html" target="_blank">Europe</a></li>
+              <li><a href="uk.html" target="_blank">United Kingdom</a></li>
+              <li><a href="canada.html" target="_blank">Canada</a></li>
+              <li><a href="australia.html" target="_blank">Australia</a></li>
+              <li><a href="japan.html" target="_blank">Japan</a></li>
+              <li><a href="india.html" target="_blank">India</a></li>
+            </ul>
+          </li>
+
+          <li><a href="services.html" target="_blank">Services</a></li>
+          <li>
+            <a href="collaborations.html" target="_blank">Collaborations</a>
+          </li>
+          <li><a href="scholarships.html" target="_blank">Scholarships</a></li>
+          <li><a href="events.html" target="_blank">Events</a></li>
+
+          <!-- Mobile-only Book Session (last item) -->
+          <li class="mobile-cta">
+            <div class="cta-wrapper">
+              <button
+                class="nav-btn"
+                onclick="
+                  window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+                "
+              >
+                Book Session
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="nav-right">
+          <div class="cta-wrapper">
+            <span class="pointer">👉</span>
+            <button
+              class="nav-btn"
+              onclick="
+                window.open('https://forms.gle/C7TUafRa4tg1occq6', '_blank')
+              "
+            >
+              Book Session
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          Study Abroad &bull; Events &amp; Webinars
+        </div>
+        <h1 class="hero-title">Our <span>Events</span></h1>
+        <p class="hero-subtitle">
+          Webinars, Workshops &amp; Global Education Sessions — highlights from
+          our past events worldwide.
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+    </section>
+
+    <!-- ═══ EVENTS ═══ -->
+    <section class="events-section">
+      <div class="section-label fade-up">
+        <h2>Past Events</h2>
+        <p>A look back at our global education sessions and webinars.</p>
+      </div>
+
+      <div class="events-grid">
+        <!-- ── CARD 1 ── -->
+        <div class="event-card">
+          <div class="card-poster">
+            <!-- Replace src below with your actual poster image -->
+            <img
+              src="events/WhatsApp Image 2026-05-01 at 5.09.42 PM.jpeg"
+              alt="Global Youth Leadership Summit"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="card-poster-placeholder">
+              <div class="ph-icon">🎙️</div>
+              <div class="ph-label">Webinar Poster</div>
+            </div>
+            <span class="card-badge">Past Event</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Dreaming of Studying in Europe</h3>
+            <p class="card-desc">
+              Scholarships and oppurtunities in Europe for students
+            </p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <div class="meta-icon">📅</div>
+                <div>
+                  <span class="meta-label">Date &amp; Time</span>
+                  <span class="meta-value"
+                    >Sep 13, 2025 &nbsp;·&nbsp; 8:00 PM IST</span
+                  >
+                </div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-icon">💻</div>
+                <div>
+                  <span class="meta-label">Platform</span>
+                  <span class="meta-value">Linked in</span>
+                </div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-icon">👥</div>
+                <div>
+                  <span class="meta-label">Total Attendees</span>
+                  <span class="meta-value">15+ Students Attended</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position"
+                class="btn-register"
+              >
+                View Details <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── CARD 2 ── -->
+        <div class="event-card">
+          <div class="card-poster">
+            <!-- Replace src below with your actual poster image -->
+            <img
+              src="events/WhatsApp Image 2026-05-01 at 5.09.42 PM (1).jpeg"
+              alt="Study in Europe Masterclass"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="card-poster-placeholder">
+              <div class="ph-icon">🏛️</div>
+              <div class="ph-label">Workshop Poster</div>
+            </div>
+            <span class="card-badge">Past Event</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">
+              Study in Canada - World class and beyond STEM &amp; Q&amp;A
+            </h3>
+            <p class="card-desc">
+              An in-depth session covering scholarships, visa procedures, and
+              university selection for CANADA .
+            </p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <div class="meta-icon">📅</div>
+                <div>
+                  <span class="meta-label">Date &amp; Time</span>
+                  <span class="meta-value"
+                    >Sep 26, 2025 &nbsp;·&nbsp; 8:30 PM IST</span
+                  >
+                </div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-icon">📍</div>
+                <div>
+                  <span class="meta-label">Platform</span>
+                  <span class="meta-value"
+                    >Linked In &nbsp;·&nbsp; Free Access</span
+                  >
+                </div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-icon">👥</div>
+                <div>
+                  <span class="meta-label">Total Attendees</span>
+                  <span class="meta-value">10+ Students Attended</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position"
+                class="btn-register"
+              >
+                View Details <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /events-grid -->
+    </section>
+<footer class="footer" id="footer">
+
+  <div class="footer-bg"></div>
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>IISCHOLAR</h3>
+      <p>
+        Global Education Guided by Research & Ethics. </br> 
+        Supporting students with responsible and transparent international education pathways.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        
+        <li><a href="#about">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="collaborations.html">Collaborations</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="contact.html" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Social</h4>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1EWXGP1pPR/" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/iispprstudyabroad?igsh=MW1rdmttc2ZvZDNqbg==" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/study-abroad-iisppr?trk=profile-position" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-linkedin-in"></i>
+</a>
+      </div>
+
+      <p class="social-text">
+        Stay connected for updates, admissions & scholarships.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026  IISCHOLAR All rights reserved.</p>
+  </div>
+
+</footer>
+
+
+  
+
+    <script>
+      // Intersection Observer for scroll animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              // Stagger cards
+              if (entry.target.classList.contains("event-card")) {
+                const cards = document.querySelectorAll(".event-card");
+                cards.forEach((card, i) => {
+                  setTimeout(() => card.classList.add("visible"), i * 140);
+                });
+              }
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".event-card")
+        .forEach((el) => observer.observe(el));
+        document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  const destDropdown = document.querySelector('.dropdown');
+  const destToggle = document.querySelector('.dropdown > a');
+
+  if (!hamburger || !navLinks) return;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+
+  destToggle.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      destDropdown.classList.toggle('open');
+    }
+  });
+});
+    </script>
+  </body>
+</html>
