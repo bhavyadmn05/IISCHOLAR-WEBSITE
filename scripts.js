@@ -302,3 +302,95 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+(function () {
+  const track    = document.getElementById('tsTrack');
+  const cards    = Array.from(track.querySelectorAll('.ts-card'));
+  const prevBtn  = document.getElementById('tsPrev');
+  const nextBtn  = document.getElementById('tsNext');
+  const dotBtns  = Array.from(document.querySelectorAll('.ts-dot-btn'));
+  const currentEl= document.getElementById('tsCurrent');
+  const totalEl  = document.getElementById('tsTotal');
+ 
+  const TOTAL = cards.length;
+  let current = 0;
+  let cardH   = 0;
+ 
+  totalEl.textContent = TOTAL;
+ 
+  /* ── Measure card height ─────────────────────────────────── */
+  function measure () {
+    // viewport height minus arrows/padding — we give cards a generous fixed height
+    // then let the inner body scroll if content overflows
+    const vw = window.innerWidth;
+    let h;
+    if (vw < 480)       h = 520;
+    else if (vw < 768)  h = 480;
+    else                h = 500;
+ 
+    cardH = h;
+    cards.forEach(c => { c.style.height = h + 'px'; });
+    // Set viewport height so only one card visible
+    document.querySelector('.ts-viewport').style.height = h + 'px';
+    applySlide(false);
+  }
+ 
+  /* ── Apply vertical translate ────────────────────────────── */
+  function applySlide (animate = true) {
+    if (!animate) track.style.transition = 'none';
+    track.style.transform = `translateY(-${current * cardH}px)`;
+    if (!animate) {
+      // Force reflow then restore transition
+      void track.offsetHeight;
+      track.style.transition = '';
+    }
+ 
+    // Sync dots
+    dotBtns.forEach((d, i) => {
+      d.classList.toggle('ts-dot-btn--active', i === current);
+      d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+ 
+    // Counter
+    currentEl.textContent = current + 1;
+ 
+    // Arrow states
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === TOTAL - 1;
+ 
+    // Scroll card body back to top
+    const cb = cards[current].querySelector('.ts-card-body');
+    if (cb) cb.scrollTop = 0;
+  }
+ 
+  /* ── Navigation ──────────────────────────────────────────── */
+  function goTo (i) {
+    current = Math.max(0, Math.min(TOTAL - 1, i));
+    applySlide();
+  }
+ 
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  dotBtns.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+ 
+  /* ── Touch / swipe support ───────────────────────────────── */
+  let touchY0 = null;
+  document.querySelector('.ts-viewport').addEventListener('touchstart', e => {
+    touchY0 = e.touches[0].clientY;
+  }, { passive: true });
+  document.querySelector('.ts-viewport').addEventListener('touchend', e => {
+    if (touchY0 === null) return;
+    const dy = touchY0 - e.changedTouches[0].clientY;
+    if (Math.abs(dy) > 40) goTo(current + (dy > 0 ? 1 : -1));
+    touchY0 = null;
+  }, { passive: true });
+ 
+  /* ── Keyboard ────────────────────────────────────────────── */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowUp')   goTo(current - 1);
+    if (e.key === 'ArrowDown') goTo(current + 1);
+  });
+ 
+  /* ── Init ────────────────────────────────────────────────── */
+  measure();
+  window.addEventListener('resize', measure);
+})();

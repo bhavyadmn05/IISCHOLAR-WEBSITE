@@ -21,6 +21,9 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css"
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -577,8 +580,161 @@ Book Counselling
   </div>
 
 </section>
-<section>
-  <div class="testimonials">Testimonials</div>
+<section class="ts-section" id="testimonials">
+ 
+  <!-- decorative layers -->
+  <div class="ts-orb ts-orb--a"></div>
+  <div class="ts-orb ts-orb--b"></div>
+  <div class="ts-lattice"></div>
+ 
+  <!-- ── Header ── -->
+  <header class="ts-header">
+    <span class="ts-eyebrow">
+      <span class="ts-line"></span>Student Stories<span class="ts-line ts-line--r"></span>
+    </span>
+    <h2 class="ts-heading">What Our Students Say</h2>
+    <p class="ts-sub">Real experiences from students who achieved their study&nbsp;abroad dreams</p>
+  </header>
+ 
+  <!-- ── Slider Shell ── -->
+  <div class="ts-shell">
+ 
+    <!-- Left Arrow -->
+    <button class="ts-arrow ts-arrow--prev" id="tsPrev" aria-label="Previous testimonial">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+ 
+    <!-- Track -->
+    <div class="ts-viewport" aria-live="polite">
+      <div class="ts-track" id="tsTrack">
+ 
+        <!-- ── CARD 1 ── -->
+        <article class="ts-card" data-index="0">
+          <div class="ts-card-shine"></div>
+          <div class="ts-card-body">
+            <div class="ts-card-top">
+              <svg class="ts-qmark" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 38V23.2C0 9.87 7.92 2.11 23.76 0l3.17 5.28C19.36 6.69 15.14 10.56 14.08 16.91H21.11V38H0ZM26.4 38V23.2C26.4 9.87 34.32 2.11 50.16 0l3.17 5.28C45.76 6.69 41.54 10.56 40.48 16.91H47.51V38H26.4Z" fill="currentColor"/>
+              </svg>
+              <div class="ts-stars" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+ 
+            <blockquote class="ts-quote">
+              <p>I would like to sincerely recommend <em>Soumita Sen Dutta, Founder of IISPPR</em>, for her exceptional guidance throughout my study abroad journey. From the very beginning, she provided clear, strategic direction—helping me identify the right programs, refine my application materials, and stay on track with multiple deadlines.</p>
+              <p>Her ability to understand my academic goals and position my profile effectively was remarkable. The entire process can be overwhelming, but her structured approach, attention to detail, and consistent encouragement made a significant difference.</p>
+              <p class="ts-italic">I highly recommend Soumita ma'am to anyone seeking professional, reliable mentorship for higher studies abroad.</p>
+            </blockquote>
+ 
+            <div class="ts-offers">
+              <p class="ts-offers-title">Offers Secured</p>
+              <ul>
+                <li><span class="ts-dot"></span>Erasmus Mundus (MERGED) — Uni. of Copenhagen &amp; Warsaw</li>
+                <li><span class="ts-dot"></span>Trinity College Dublin — Environmental Sciences</li>
+                <li><span class="ts-dot"></span>University of Manchester</li>
+                <li><span class="ts-dot"></span>Loughborough University</li>
+              </ul>
+            </div>
+ 
+            <div class="ts-author">
+              <div class="ts-avatar">S</div>
+              <div class="ts-author-info">
+                <strong class="ts-name">Study Abroad Aspirant</strong>
+                <span class="ts-role">Environmental Sciences</span>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- ── CARD 2 ── -->
+        <article class="ts-card" data-index="1">
+          <div class="ts-card-shine"></div>
+          <div class="ts-card-body">
+            <div class="ts-card-top">
+              <svg class="ts-qmark" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 38V23.2C0 9.87 7.92 2.11 23.76 0l3.17 5.28C19.36 6.69 15.14 10.56 14.08 16.91H21.11V38H0ZM26.4 38V23.2C26.4 9.87 34.32 2.11 50.16 0l3.17 5.28C45.76 6.69 41.54 10.56 40.48 16.91H47.51V38H26.4Z" fill="currentColor"/>
+              </svg>
+              <div class="ts-stars" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+ 
+            <blockquote class="ts-quote">
+              <p>I'm truly grateful to have had Ms. Soumita as my mentor throughout my college application journey to the US and Singapore. From helping me understand the entire process to guiding me step by step, she provided incredible clarity and support.</p>
+              <p>She helped me especially with essay writing—finding topics and expressing ideas clearly. She also encouraged me to pursue extracurricular activities and strengthen my profile. Even after submission, her support continued.</p>
+              <p class="ts-italic">Her mentorship has made a lasting impact on my journey.</p>
+            </blockquote>
+ 
+            <div class="ts-author">
+              <div class="ts-avatar">A</div>
+              <div class="ts-author-info">
+                <strong class="ts-name">Anam Mansuri</strong>
+                <span class="ts-role">B.Sc. Computer Science</span>
+                <span class="ts-univ">Nanyang Technological University, Singapore</span>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+        <!-- ── CARD 3 ── -->
+        <article class="ts-card" data-index="2">
+          <div class="ts-card-shine"></div>
+          <div class="ts-card-body">
+            <div class="ts-card-top">
+              <svg class="ts-qmark" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 38V23.2C0 9.87 7.92 2.11 23.76 0l3.17 5.28C19.36 6.69 15.14 10.56 14.08 16.91H21.11V38H0ZM26.4 38V23.2C26.4 9.87 34.32 2.11 50.16 0l3.17 5.28C45.76 6.69 41.54 10.56 40.48 16.91H47.51V38H26.4Z" fill="currentColor"/>
+              </svg>
+              <div class="ts-stars" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+ 
+            <blockquote class="ts-quote">
+              <p>The guidance session on abroad admission was very informative and well-structured. Soumita Ma'am explained everything clearly and patiently addressed all my doubts.</p>
+              <p class="ts-italic">A truly enriching experience that gave me the confidence to take the next step in my journey. Thank you ma'am 😊</p>
+            </blockquote>
+ 
+            <div class="ts-badge">
+              <span class="ts-badge-dot"></span>Personalised 1-on-1 Session
+            </div>
+ 
+            <div class="ts-author">
+              <div class="ts-avatar">C</div>
+              <div class="ts-author-info">
+                <strong class="ts-name">Charu</strong>
+                <span class="ts-role">Aspiring International Student</span>
+              </div>
+            </div>
+          </div>
+        </article>
+ 
+      </div><!-- /ts-track -->
+    </div><!-- /ts-viewport -->
+ 
+    <!-- Right Arrow -->
+    <button class="ts-arrow ts-arrow--next" id="tsNext" aria-label="Next testimonial">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+ 
+  </div><!-- /ts-shell -->
+ 
+  <!-- ── Dot Indicators ── -->
+  <div class="ts-dots" id="tsDots" role="tablist" aria-label="Testimonial navigation">
+    <button class="ts-dot-btn ts-dot-btn--active" role="tab" aria-selected="true"  data-i="0" aria-label="Testimonial 1"></button>
+    <button class="ts-dot-btn"                    role="tab" aria-selected="false" data-i="1" aria-label="Testimonial 2"></button>
+    <button class="ts-dot-btn"                    role="tab" aria-selected="false" data-i="2" aria-label="Testimonial 3"></button>
+  </div>
+ 
+  <!-- ── Card Counter ── -->
+  <p class="ts-counter" id="tsCounter" aria-live="polite">
+    <span id="tsCurrent">1</span> <span class="ts-counter-sep">/</span> <span id="tsTotal">3</span>
+  </p>
+ 
 </section>
 
 <section class="cta">
