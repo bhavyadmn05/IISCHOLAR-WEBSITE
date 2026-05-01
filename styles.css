@@ -1460,7 +1460,169 @@ header .footer-wave {
 .listar-feature-item-wrapper:nth-child(2) { transition-delay: 0.3s; }
 .listar-feature-item-wrapper:nth-child(3) { transition-delay: 0.5s; }
 .listar-feature-item-wrapper:nth-child(4) { transition-delay: 0.7s; }
+/* =============================================================================
+   RESPONSIVE — TABLET (≤ 768px)
+============================================================================= */
 
+@media (max-width: 768px) {
+
+  /* Programs section */
+  .programs {
+    padding: 60px 20px 0;
+    margin-top: 30px;
+  }
+
+  .programs h2 {
+    font-size: 28px;
+    margin: -60px 0 30px;
+  }
+
+  /* Card grid — let auto-fit handle it, reduce gap */
+  .grid {
+    gap: 16px;
+  }
+
+  /* Stats — collapse to 2 columns */
+  .stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-block:not(:last-child)::after {
+    display: none; /* remove divider lines in wrapped layout */
+  }
+
+  /* Add horizontal dividers between rows instead */
+  .stat-block:nth-child(2n)::after {
+    display: none;
+  }
+
+  /* Header */
+  .header-design {
+    height: 80px;
+  }
+
+  header .footer-wave {
+    height: 130px;
+    bottom: -45px;
+  }
+
+  /* Feature items — full width, reduce padding */
+  .listar-feature-item-wrapper {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 80px;
+  }
+
+  .listar-features-design-2 .listar-feature-item-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 80px;
+  }
+
+  .listar-feature-item .listar-feature-item-inner {
+    padding: 50px 20px;
+  }
+
+  /* Feature icon — slightly smaller */
+  .listar-feature-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    margin-left: -60px;
+    top: -56px;
+    margin-top: -60px;
+  }
+
+  .listar-feature-icon-inner {
+    width: 96px;
+    height: 96px;
+    line-height: 96px;
+  }
+
+  .listar-feature-icon-inner div {
+    width: 96px;
+    height: 96px;
+    line-height: 96px;
+  }
+
+  .listar-feature-icon-inner img {
+    height: 44px;
+  }
+
+  /* Stat numbers */
+  .stat-num {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .stat-block {
+    padding: 36px 8px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — MOBILE (≤ 480px)
+============================================================================= */
+
+@media (max-width: 480px) {
+
+  /* Programs */
+  .programs {
+    padding: 40px 16px 0;
+  }
+
+  .programs h2 {
+    font-size: 24px;
+  }
+
+  /* Stats — stay 2 columns but tighter */
+  .stats-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-block {
+    padding: 28px 6px;
+  }
+
+  .stat-num {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* Feature items */
+  .listar-feature-item-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 60px;
+  }
+
+  .listar-feature-item .listar-feature-item-inner {
+    padding: 40px 16px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 28px 16px;
+  }
+
+  /* Map button */
+  .listar-map-button {
+    height: 140px;
+    line-height: 110px;
+  }
+
+  .listar-map-button-text span {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+}
 
 /* =============================================================================
    RESPONSIVE — TABLET  (max-width: 992px)
@@ -2353,4 +2515,893 @@ button { cursor: pointer; background: none; border: none; }
   .footer-container {
     grid-template-columns: 1fr;
   }
+}
+/* =============================================================================
+   RESPONSIVE — ABOUT SECTION
+============================================================================= */
+
+@media (max-width: 900px) {
+  .about {
+    padding: 60px 28px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .about-text h2 {
+    font-size: 36px;
+  }
+
+  .about-highlight {
+    font-size: 17px;
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 48px 20px;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-highlight {
+    font-size: 15px;
+    padding: 14px 16px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 36px 16px;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+  }
+
+  .about::before,
+  .about::after {
+    display: none; /* decorative circles clip on very small screens */
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — TICKER
+============================================================================= */
+
+@media (max-width: 600px) {
+  .ticker {
+    padding: 10px 0;
+  }
+
+  .ticker-content span {
+    font-size: 12px;
+  }
+
+  .ticker-content {
+    gap: 24px;
+    animation-duration: 12s;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — CTA SECTION
+============================================================================= */
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 50px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 30px;
+  }
+
+  .cta-content p {
+    font-size: 16px;
+  }
+
+  .cta-btn.primary {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-content h2 {
+    font-size: 24px;
+  }
+
+  .cta-content p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn.primary {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — FOOTER
+============================================================================= */
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 60px 28px 20px;
+  }
+
+  .footer-container {
+    gap: 36px;
+  }
+}
+
+/* 900px already sets footer-container to 2-column — add tweaks */
+@media (max-width: 900px) {
+  .footer {
+    padding: 50px 24px 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 20px 16px;
+  }
+
+  .footer-col h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 8px;
+  }
+
+  .social-icons a {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 32px;
+    font-size: 13px;
+  }
+}
+
+/* 500px already sets footer-container to 1-column */
+@media (max-width: 500px) {
+  .footer {
+    padding: 36px 16px 16px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — MODAL
+============================================================================= */
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 94%;
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+
+  .modal-content input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .close-btn {
+    font-size: 26px;
+    top: 10px;
+    right: 14px;
+  }
+
+  #thankYouBox p {
+    font-size: 20px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — PARTNERS
+============================================================================= */
+
+/* 1024px sets 3-col, 600px sets 2-col — fill in the gaps */
+@media (max-width: 768px) {
+  .partners {
+    padding: 50px 16px;
+  }
+
+  .partners > .container h2 {
+    font-size: 30px;
+  }
+
+  .partners > .container h3 {
+    font-size: 26px;
+    margin-bottom: 32px;
+  }
+
+  .partners .logo-grid .logo-item {
+    height: 90px;
+    padding: 10px;
+  }
+
+  .partners .logo-grid .logo-item img {
+    max-width: 110px;
+    max-height: 55px;
+  }
+}
+
+@media (max-width: 400px) {
+  .partners .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partners .logo-grid .logo-item {
+    height: 80px;
+  }
+
+  .partners .logo-grid .logo-item img {
+    max-width: 90px;
+    max-height: 45px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — UNIQUE / FEATURES SECTION
+============================================================================= */
+
+@media (max-width: 1024px) {
+  .unique > .container h2 {
+    font-size: 32px;
+  }
+
+  .unique .features-grid {
+    gap: 20px;
+  }
+}
+
+/* 900px already sets 2-col, 600px sets 1-col */
+@media (max-width: 768px) {
+  .unique > .container h2 {
+    font-size: 26px;
+    margin: -60px 0 30px;
+  }
+
+  .unique .section-desc {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .unique .feature-card .card-inner {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unique > .container h2 {
+    font-size: 22px;
+  }
+
+  .unique .section-desc {
+    font-size: 14px;
+  }
+
+  .unique .feature-card .icon-box {
+    width: 58px;
+    height: 58px;
+  }
+
+  .unique .feature-card .card-inner h3 {
+    font-size: 16px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — FOUNDER / INTRO SECTION
+============================================================================= */
+
+@media (max-width: 768px) {
+  .founder-intro {
+    padding: 40px 20px;
+  }
+
+  .intro-badge {
+    font-size: 22px;
+  }
+
+  .primary-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-badge {
+    font-size: 18px;
+  }
+
+  .founder-intro {
+    padding: 32px 16px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — TESTIMONIALS (ts-section)
+============================================================================= */
+
+@media (max-width: 768px) {
+  .ts-section {
+    padding: 48px 16px;
+  }
+
+  .ts-heading {
+    font-size: 1.7rem;
+  }
+
+  .ts-shell {
+    gap: 8px;
+  }
+
+  .ts-card-body {
+    padding: 24px 20px;
+  }
+
+  .ts-quote {
+    font-size: .88rem;
+  }
+
+  .ts-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .ts-name {
+    font-size: .88rem;
+  }
+
+  .ts-role,
+  .ts-univ {
+    font-size: .72rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ts-section {
+    padding: 36px 12px;
+  }
+
+  .ts-heading {
+    font-size: 1.4rem;
+  }
+
+  .ts-sub {
+    font-size: .82rem;
+  }
+
+  .ts-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ts-arrow svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .ts-card-body {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .ts-offers {
+    padding: 12px 14px;
+  }
+
+  .ts-offers li {
+    font-size: .78rem;
+  }
+
+  .ts-badge {
+    font-size: .68rem;
+    padding: 5px 12px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE — GENERAL SECTION PADDING
+   (catches any section that didn't get explicit rules above)
+============================================================================= */
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 32px 14px;
+  }
+}
+/* =============================================================================
+   OVERFLOW FIX — applied at root level to kill the scrollbar entirely
+   Add this to your <body> or outermost wrapper in HTML if needed too:
+   body { overflow-x: hidden; }
+============================================================================= */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+
+/* =============================================================================
+   PROGRAMS SECTION — RESPONSIVE
+============================================================================= */
+
+@media (max-width: 1024px) {
+  .programs {
+    padding: 80px 40px 0;
+  }
+
+  .programs h2 {
+    font-size: 34px;
+    margin: -80px 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .programs {
+    padding: 60px 20px 0;
+    margin-top: 30px;
+  }
+
+  .programs h2 {
+    font-size: 26px;
+    margin: -50px 0 30px; /* reduced negative margin — main overflow culprit */
+  }
+
+  .programs h2::after {
+    width: 60px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .programs {
+    padding: 40px 16px 0;
+    margin-top: 20px;
+  }
+
+  .programs h2 {
+    font-size: 22px;
+    margin: -36px 0 24px;
+  }
+}
+
+
+/* =============================================================================
+   GRID — RESPONSIVE
+============================================================================= */
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* single column on small phones */
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    gap: 16px;
+  }
+}
+
+
+/* =============================================================================
+   CARD — RESPONSIVE
+============================================================================= */
+
+@media (max-width: 768px) {
+  .card {
+    padding: 28px 18px;
+    border-radius: 14px;
+  }
+
+  .card:hover {
+    transform: translateY(-5px) scale(1.01); /* reduce dramatic hover on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 22px 16px;
+    border-radius: 12px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card:hover {
+    transform: none; /* disable transform hover on very small screens */
+  }
+}
+
+
+/* =============================================================================
+   STATS SECTION — RESPONSIVE
+============================================================================= */
+
+@media (max-width: 992px) {
+  .stats-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  /* Hide all pseudo-element dividers — they don't suit a wrapped grid */
+  .stat-block::after {
+    display: none !important;
+  }
+
+  .stat-block {
+    padding: 36px 10px;
+  }
+
+  .stat-num {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+  }
+
+  .stat-bar {
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-block {
+    padding: 28px 8px;
+  }
+
+  .stat-num {
+    font-size: clamp(1.6rem, 9vw, 2.4rem);
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 360px) {
+  .stats-inner {
+    grid-template-columns: 1fr; /* stack on very narrow phones */
+  }
+}
+
+
+/* =============================================================================
+   HEADER DESIGN — RESPONSIVE
+============================================================================= */
+
+@media (max-width: 768px) {
+  .header-design {
+    height: 80px;
+  }
+
+  header .footer-wave {
+    height: 130px;
+    bottom: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-design {
+    height: 60px;
+  }
+
+  header .footer-wave {
+    height: 100px;
+    bottom: -30px;
+  }
+}
+
+
+/* =============================================================================
+   MAP BUTTON — RESPONSIVE
+============================================================================= */
+
+@media (max-width: 768px) {
+  .listar-map-button {
+    height: 140px;
+    line-height: 110px;
+  }
+
+  .listar-map-button-text span {
+    font-size: 13px;
+    padding: 9px 18px;
+    height: auto;
+  }
+
+  .listar-map-button-text span::after {
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border-width: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .listar-map-button {
+    height: 110px;
+    line-height: 90px;
+  }
+
+  .listar-map-button-text span {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  /* Disable the expand-on-hover — too cramped on mobile */
+  .listar-map-button:hover .listar-map-button-text span {
+    padding: 8px 14px;
+    transform: none;
+  }
+}
+
+
+/* =============================================================================
+   FEATURE ITEMS — RESPONSIVE
+   These are the biggest overflow culprits. The icon wrapper uses left:50% +
+   margin-left:-74px which escapes narrow containers. The block-content-wrapper
+   uses margin:-30px which adds 30px of invisible bleed on each side.
+============================================================================= */
+
+@media (max-width: 768px) {
+  /* Force full width stacking — overrides Bootstrap col-* widths */
+  .listar-feature-item-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-bottom: 80px;
+    box-sizing: border-box;
+  }
+
+  .listar-features-design-2 .listar-feature-item-wrapper {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-bottom: 80px;
+  }
+
+  /* Reduce inner padding so icon doesn't clip */
+  .listar-feature-item .listar-feature-item-inner {
+    padding: 50px 20px 30px;
+    overflow: visible;
+  }
+
+  /* Neutralise the negative margin bleed on the content wrapper */
+  .listar-feature-item .listar-feature-block-content-wrapper {
+    margin: -20px;
+    padding: 20px;
+    height: calc(100% + 60px);
+  }
+
+  /* Shrink icon wrapper — 148px at left:50% blows out on ~320px screens */
+  .listar-feature-icon-wrapper {
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    margin-left: -55px;   /* must equal half of width */
+    top: -50px;
+    margin-top: -55px;
+  }
+
+  .listar-feature-icon-inner {
+    width: 88px;
+    height: 88px;
+    line-height: 88px;
+  }
+
+  .listar-feature-icon-inner div {
+    width: 88px;
+    height: 88px;
+    line-height: 88px;
+  }
+
+  .listar-feature-icon-inner img {
+    height: 42px;
+  }
+
+  /* Constrain the right-border pseudo element */
+  .listar-feature-right-border {
+    width: calc(100% - 80px);
+    overflow: hidden;
+  }
+
+  /* Feature title font */
+  .listar-feature-item .listar-feature-item-title span {
+    font-size: 16px;
+  }
+
+  /* Excerpt */
+  .listar-feature-item-excerpt {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  /* Bottom padding spacer */
+  .pset {
+    padding-top: 24px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .listar-feature-item-wrapper {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-bottom: 60px;
+  }
+
+  .listar-feature-item .listar-feature-item-inner {
+    padding: 44px 16px 24px;
+  }
+
+  /* Further shrink icon on very small screens */
+  .listar-feature-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    margin-left: -45px;
+    top: -42px;
+    margin-top: -45px;
+  }
+
+  .listar-feature-icon-inner {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+  }
+
+  .listar-feature-icon-inner div {
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+  }
+
+  .listar-feature-icon-inner img {
+    height: 34px;
+  }
+
+  .listar-feature-item img,
+  .listar-feature-item i {
+    font-size: 30px;
+  }
+
+  .listar-feature-item .listar-feature-item-title span {
+    font-size: 15px;
+  }
+
+  /* Hide the decorative right-border arc on mobile — it clips badly */
+  .listar-feature-right-border {
+    display: none;
+  }
+
+  /* Neutralise block-content negative margin entirely */
+  .listar-feature-item .listar-feature-block-content-wrapper {
+    margin: -12px;
+    padding: 12px;
+    height: calc(100% + 40px);
+  }
+
+  .listar-feature-item-excerpt {
+    padding: 0 8px;
+    font-size: 13px;
+  }
+
+  .pset {
+    padding-top: 16px;
+    padding-bottom: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  .listar-feature-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-left: -40px;
+    top: -36px;
+    margin-top: -40px;
+  }
+
+  .listar-feature-icon-inner {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+  }
+
+  .listar-feature-icon-inner div {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+  }
+
+  .listar-feature-icon-inner img {
+    height: 28px;
+  }
+}
+
+
+/* =============================================================================
+   SCROLL ANIMATION — adjust stagger on mobile
+   (fewer items visible at once so heavy delays feel broken)
+============================================================================= */
+
+@media (max-width: 768px) {
+  .listar-feature-item-wrapper:nth-child(1) { transition-delay: 0.05s; }
+  .listar-feature-item-wrapper:nth-child(2) { transition-delay: 0.15s; }
+  .listar-feature-item-wrapper:nth-child(3) { transition-delay: 0.25s; }
+  .listar-feature-item-wrapper:nth-child(4) { transition-delay: 0.35s; }
 }
