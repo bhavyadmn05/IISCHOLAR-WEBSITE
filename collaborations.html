@@ -1133,7 +1133,60 @@
         background: rgba(200, 155, 60, 0.35);
         transform: scale(1.1);
       }
-      
+      .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-gold);
+  color: var(--dark-navy);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 34px;
+  border-radius: 50px;        /* pill shape */
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(200, 155, 60, 0.25);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  background: var(--color-gold-hover, var(--gold-light));
+  box-shadow: 0 18px 40px rgba(200, 155, 60, 0.4);
+  color: var(--dark-navy);
+}
+
+/* Shine sweep */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.6s ease;
+}
+
+.btn-primary:hover::before {
+  left: 120%;
+}
+
+.btn-primary svg {
+  transition: transform 0.35s ease;
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
 .footer {
   position: relative;
   background: linear-gradient(135deg, #071a2e, #0D2B4D);

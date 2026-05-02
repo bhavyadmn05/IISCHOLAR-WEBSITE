@@ -257,151 +257,7 @@ section {
 }
 
 
-/* =============================================================================
-   HERO SECTION
-============================================================================= */
 
-.hero {
-  position: relative;
-  height: 90vh;
-  background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(13, 43, 77, 0.8);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 20px;
-  width: 100%;
-}
-
-.main-tagline {
-  font-size: 52px;
-  font-weight: 800;
-  color: var(--color-white);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.sub-tagline {
-  font-size: 22px;
-  color: var(--color-gold);
-  margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  opacity: 0;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-
-/* =============================================================================
-   BUTTONS
-============================================================================= */
-
-.btn {
-  padding: 14px 28px;
-  font-size: 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  box-sizing: border-box;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-  color: var(--color-white);
-  border: none;
-  box-shadow: 0 8px 20px rgba(200, 155, 60, 0.3);
-}
-
-.btn.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(200, 155, 60, 0.5);
-  color: var(--color-primary);
-}
-
-.btn.secondary {
-  background: var(--color-white);
-  color: var(--color-primary);
-  border: none;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-}
-
-.btn.secondary:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-}
-
-.btn.outline {
-  background: transparent;
-  color: var(--color-white);
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-}
-
-.btn.outline:hover {
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-  color: var(--color-primary);
-  transform: translateY(-3px);
-}
-
-
-/* =============================================================================
-   HERO ANIMATIONS
-============================================================================= */
-
-.animate-tagline {
-  animation: fadeSlideUp 1.5s ease forwards;
-  animation-delay: 0.5s;
-}
-
-@keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
-.slide-left {
-  opacity: 0;
-  transform: translateX(-80px);
-  animation: slideLeftAnim 1.2s ease forwards;
-}
-
-@keyframes slideLeftAnim {
-  from { opacity: 0; transform: translateX(-80px); }
-  to   { opacity: 1; transform: translateX(0);     }
-}
-
-.slide-right {
-  opacity: 0;
-  transform: translateX(80px);
-  animation: slideRightAnim 1.2s ease forwards;
-  animation-delay: 0.6s;
-}
-
-@keyframes slideRightAnim {
-  from { opacity: 0; transform: translateX(80px); }
-  to   { opacity: 1; transform: translateX(0);    }
-}
 
 
 /* =============================================================================
@@ -813,6 +669,212 @@ section {
 
   .brand    { font-size: 16px; }
   .nav-logo { height: 40px;    }
+}
+/* =============================================================================
+   HERO SECTION — FULL FIX
+============================================================================= */
+
+.hero {
+  position: relative;
+  height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Offset the navbar height so hero doesn't go behind it */
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 43, 77, 0.8);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+  width: 100%;
+}
+
+.main-tagline {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.sub-tagline {
+  font-size: 22px;
+  color: var(--color-gold);
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+/* =============================================================================
+   BUTTONS
+============================================================================= */
+
+.btn {
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: var(--color-white);
+  border: none;
+  box-shadow: 0 8px 20px rgba(200, 155, 60, 0.3);
+}
+
+.btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(200, 155, 60, 0.5);
+  color: var(--color-primary);
+}
+
+.btn.secondary {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.btn.secondary:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.btn.outline:hover {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+
+/* =============================================================================
+   HERO ANIMATIONS
+============================================================================= */
+
+.animate-tagline {
+  animation: fadeSlideUp 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: slideLeftAnim 1.2s ease forwards;
+}
+
+@keyframes slideLeftAnim {
+  from { opacity: 0; transform: translateX(-80px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(80px);
+  animation: slideRightAnim 1.2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes slideRightAnim {
+  from { opacity: 0; transform: translateX(80px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+
+/* =============================================================================
+   MOBILE RESPONSIVE
+============================================================================= */
+
+@media (max-width: 768px) {
+
+  /* --- If navbar is FIXED (position: fixed) --- */
+  /* Hero should be full screen height; navbar floats above it */
+  .hero {
+    height: 100svh;
+    max-height: 100svh;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding: 0 24px;
+  }
+
+  .main-tagline {
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .sub-tagline {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 80%;
+    max-width: 260px;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .hero {
+    /* Subtract navbar height (check your actual navbar height, commonly 60-70px) */
+    height: calc(100svh - 64px);
+    max-height: calc(100svh - 64px);
+    overflow: hidden;
+  }
 }
 /* =============================================================================
    CSS VARIABLES
@@ -3451,5 +3513,104 @@ html, body {
   .unique .feature-card:last-child {
     grid-column: auto;
     width: 100%;
+  }
+}
+.primary-btn {
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: var(--color-white);
+  border: none;
+  box-shadow: 0 8px 20px rgba(200, 155, 60, 0.3);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(200, 155, 60, 0.5);
+  color: var(--color-primary);
+}
+/* =============================================================================
+   CTA BUTTONS — RESPONSIVE FIX
+============================================================================= */
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;        /* vertically align both buttons */
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Reset browser defaults so <a> and <button> render identically */
+.cta-btn.primary {
+  padding: 16px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-gold);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(200, 155, 60, 0.25);
+  transition: all 0.35s ease;
+
+  /* These fix the <a> vs <button> size mismatch */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;             /* prevents <a> from having extra line-height */
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-family: inherit;       /* <button> doesn't inherit font by default */
+  -webkit-appearance: none;   /* strips iOS button styling */
+  appearance: none;
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-4px);
+  background: var(--color-gold-hover);
+  box-shadow: 0 18px 40px rgba(200, 155, 60, 0.4);
+  color: var(--color-primary);   /* keeps color on <a> hover */
+}
+
+/* Shine sweep */
+.cta-btn.primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.6s ease;
+}
+
+.cta-btn.primary:hover::before {
+  left: 120%;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-btn.primary {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 20px;
+    font-size: 15px;
   }
 }
