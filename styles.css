@@ -1162,7 +1162,14 @@ header .footer-wave {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  margin-left: 50px;
+  margin-left: 0px; /* mobile default */
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+  .listar-feature-items {
+    margin-left: 50px;
+  }
 }
 
 .listar-feature-item-wrapper {
