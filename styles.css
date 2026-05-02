@@ -3405,3 +3405,51 @@ html, body {
   .listar-feature-item-wrapper:nth-child(3) { transition-delay: 0.25s; }
   .listar-feature-item-wrapper:nth-child(4) { transition-delay: 0.35s; }
 }
+@media (max-width: 900px) {
+  .unique .feature-card:last-child {
+    grid-column: 1 / -1; /* span full width */
+    max-width: 340px;     /* optional: cap its width so it doesn't look too wide */
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .unique .feature-card:last-child {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+  }
+}
+/* Reset last card centering on smaller screens */
+@media (max-width: 900px) {
+  .unique .feature-card:last-child {
+    grid-column: auto;
+  }
+}
+/* Desktop: center the 7th card in middle column */
+.unique .feature-card:last-child {
+  grid-column: 2 / 3;
+}
+
+/* Tablet (2-col grid) — reset so it behaves normally */
+@media (max-width: 1024px) {
+  .unique .feature-card:last-child {
+    grid-column: auto;
+  }
+}
+
+/* Mobile (768px and below) — reset again explicitly */
+@media (max-width: 768px) {
+  .unique .feature-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .unique .feature-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+}
